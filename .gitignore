@@ -1,0 +1,125 @@
+##############################
+# Project Specific
+##############################
+_Versioning.h
+
+##############################
+# OS generated files 
+##############################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+
+##############################
+# built application files
+##############################
+*.apk
+*.ap_
+
+##############################
+# files for the dex VM
+##############################
+*.dex
+
+##############################
+# Java class files
+##############################
+*.class
+
+##############################
+# Generated files
+##############################
+bin
+gen
+
+##############################
+# Local configuration file
+##############################
+local.properties
+
+##############################
+# Eclipse project files
+##############################
+.classpath
+.project
+.metadata
+
+##############################
+# Proguard folder (Eclipse)
+##############################
+proguard
+
+##############################
+# Intellij project files
+##############################
+*.iml
+*.ipr
+*.iws
+.idea
+.gradle
+build
+captures
+
+##############################
+# NDK
+##############################
+obj
+myanalyisis.db
+
+##############################
+# Xcode
+##############################
+
+DerivedData
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.moved-aside
+*.xcuserstate
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+##############################
+# CocoaPods
+##############################
+
+#Pods
+
+##############################
+# Carthage
+##############################
+
+Carthage/Build
+
+##############################
+# Fastlane
+##############################
+
+fastlane/report.xml
+fastlane/screenshots
+
+##############################
+# Custom for TFIT
+##############################
+
+passphrase.c
+passphrase.encrypted
+passphrase.h
+passphrase.unencrypted
+TFIT_key_iAES2.c
+TFIT_key_iAES2.h
+
