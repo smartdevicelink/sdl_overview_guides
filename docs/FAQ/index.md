@@ -1,4 +1,4 @@
-# SmartDeivceLink FAQ
+# SmartDeviceLink FAQ
 Here are a few of the most common questions new developers have around the SmartDeviceLink project. 
 
 - [Is WiFi a supported transport?](#is-wifi-a-supported-transport?)
