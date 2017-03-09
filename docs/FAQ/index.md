@@ -17,4 +17,4 @@ This is possible, but not recommended as any app that builds itself for the head
 This is possible, but not recommended as any app that builds itself for the head unit's custom vehicle data types would not work with any other systems.  If new vehicle data types are desired, they should go through the SDL Evolution Process and be adopted by the project.
 
 ##I didn't find the answers I was looking for, where else can I look?<a id="i-didn't-find-the-answers-i-was-looking-for,-where-else-can-i-look?"></a>
-Each project has documentation, guides, and may have their own FAQ that can help. If you still need help, please join the SmartDeviceLink Slack team and ask  your question.
+Each project has documentation, guides, and may have their own FAQ that can help. If you still need help, please join the [SmartDeviceLink Slack team](http://slack.smartdevicelink.com/) and ask  your question.
