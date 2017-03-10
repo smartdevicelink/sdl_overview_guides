@@ -8,7 +8,7 @@ Here are a few of the most common questions new developers have around the Smart
 
 
 ##Is WiFi a supported transport?<a id="is-wifi-a-supported-transport?"></a>
-No. The WiFi transports currently supported are for testing and debugging only; they are not production ready. If this feature is desired, an evolution proposal can be introduced. 
+The WiFi transports currently supported are for testing and debugging only; they are not production ready. If this feature is desired, a proposal can be introduced in the SDL Evolution Process. 
 
 ##Can I implement custom HMI templates?<a id="an-i-implement-custom-hmi-templates?"></a>
 This is possible, but not recommended as any app that builds itself for the head unit's custom template would not work with any other systems.  If new templates are desired, they should go through the SDL Evolution Process and be adopted by the project.
