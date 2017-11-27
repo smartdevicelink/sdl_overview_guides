@@ -73,5 +73,5 @@ _line 3_ and _line 4_: Other information which might be useful, but not pertinen
       - Text: To use _< app name >_, it needs to be in the foreground.
       - Voice: The mobile navigation app needs to be running in the foreground of your mobile device to work. Please do this while not driving.
       
-  * Ads
+  * Ads  
     Ads are great because they give content creators the money that they need to fund their projects.  It is perfectly acceptable to include ads in your application if desired.  The trick here is to make sure to avoid Ads that require watching a video on the user's device to understand or say something like “Look at your device now to accept an offer from our sponsor!” The user’s primary task is driving the car.  They will not be able to watch a video on their device while driving, nor will they be able to interact with their device for an ad in anyway.  Especially if a lock screen is up on their device.
