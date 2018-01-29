@@ -1,9 +1,6 @@
 ## PerformAudioPassThru
 
-`PerformAudioPassThru` feeds you with audio data through the vehicle’s
-microphone. The audio data could be used in cloud-based and on-line voice
-recognition to achieve dynamic and diversified user interaction, like POI search, information query. Or even record the voice when driver is singing.
-The audio data is in form of PCM, and its sampling rate, bit width, timeout can be set in the `PerformAudioPassThru` request per your requirement. The headunit transmits its supported parameters via the `registerAppInterface` response. 16bit/16kHz is a widely supported configuration, which delivers good audio quality.
+`PerformAudioPassThru` feeds you with audio data through the vehicle’s microphone. The audio data could be used in cloud-based and on-line voice recognition to achieve dynamic and diversified user interaction, like POI search, information query. Or even record the voice when driver is singing. The audio data is in form of PCM, and its sampling rate, bit width, timeout can be set in the `PerformAudioPassThru` request per your requirement. The headunit transmits its supported parameters via the `registerAppInterface` response. 16bit/16kHz is a widely supported configuration, which delivers good audio quality.
 
 The parameter `muteAudio` is used to define whether to mute current audio source during AudioPassThru session.
 
