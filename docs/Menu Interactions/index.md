@@ -39,11 +39,10 @@ PerformInteraction lists should always be as small as possible by UX design. How
 *Note:* Avoid opening `PerformInteraction` from within another `PerformInteraction`.  
 
 1. List with multiple action item per choice
-
-     - For each item which has several more actions available:  
+	
+	- For each item which has several more actions available:  
   Example: Searching for events in the vicinity. There might be a big number of events. On each event you can select “Call venue”, “Navigate to it”, “Details”, “Play” (playing the artist of a potential concert in the vicinity).
-  
-       - Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
+		- Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
        - Define softbuttons for each possible action and add the respective command to voice and menu.
        - To cycle through the result list, you may use one of the below options:
        - `Skip`button (which is currently only available for Media Apps)
@@ -53,7 +52,7 @@ PerformInteraction lists should always be as small as possible by UX design. How
 
       *Note:* Only make the announcement the first time the search has been completed to reduce any kind of annoyance to the user.
 
-   - For each item only one action available:  
+	- For each item only one action available:  
   Example: scenario is already "Navigate To _<some location_>"  
   In contrast to the above, you may choose to use `PerformInteraction`.
   
