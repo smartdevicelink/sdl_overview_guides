@@ -34,10 +34,12 @@ Applications must not register voice grammars using synonyms that include other 
 It is always a good practice to add relavent and useful information to the list items, for example if your app is a media app and you have a list of audio contents, adding information such as when the content was aired.
 
 #### Handling Lists
-PerformInteraction lists should always be as small as possibl by UX desgin. However, in cases where having long lists cannot be avoided, please follow the below best practices for better user experience.
+PerformInteraction lists should always be as small as possible by UX design. However, in cases where having long lists cannot be avoided, please follow the below best practices for better user experience.
 
 *Note:* Avoid opening `PerformInteraction` from within another `PerformInteraction`.  
+
 1. List with multiple action item per choice
+
   - For each item which has several more actions available:  
     Example:
   Searching for events in the vicinity.
@@ -74,7 +76,7 @@ Result 1:
   MEDIA TRACK:    "1/25"   
   SOFTBUTTONS:   Action 1, Action 2, Action 3,...,Previous, Next, More...
   TTS:            "Result 1 <possibly more information about the result>"
-                  //First Time: Announce possible ways to naigate (skip buttons,
+                  //First Time: Announce possible ways to navigate (skip buttons,
                      voice command, etc..)
 
 ```
