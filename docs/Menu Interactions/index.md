@@ -40,23 +40,19 @@ PerformInteraction lists should always be as small as possible by UX design. How
 
 1. List with multiple action item per choice
 
-  * For each item which has several more actions available:  
-    Example:
-  Searching for events in the vicinity.
-  There might be a big number of events. On each event you can
-  select “Call venue”, “Navigate to it”, “Details”, “Play”
-  (playing the artist of a potential concert in the vicinity).
-      * Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
-      * Define softbuttons for each possible action and add the respective command to voice and menu.
-      * To cycle through the result list, you may use one of the below options:
-        * `Skip`button (which is currently only available for Media Apps)
-        * Softbuttons & Voice commands
-      * Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
-      * Announce the availablility of `Skip`hard button on the steering wheel for easy navigation.
+* For each item which has several more actions available:  
+  Example: Searching for events in the vicinity. There might be a big number of events. On each event you can select “Call venue”, “Navigate to it”, “Details”, “Play” (playing the artist of a potential concert in the vicinity).
+  * Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
+  * Define softbuttons for each possible action and add the respective command to voice and menu.
+  * To cycle through the result list, you may use one of the below options:
+  * `Skip`button (which is currently only available for Media Apps)
+  * Softbuttons & Voice commands
+  * Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
+  * Announce the availablility of `Skip`hard button on the steering wheel for easy navigation.
 
       *Note:* Only make the announcement the first time the search has been completed to reduce any kind of annoyance to the user.
 
-  * For each item only one action available:  
+* For each item only one action available:  
   Example: scenario is already "Navigate To _<some location_>"  
   In contrast to the above, you may choose to use `PerformInteraction`.
 
