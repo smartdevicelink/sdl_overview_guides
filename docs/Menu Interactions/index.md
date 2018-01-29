@@ -40,7 +40,7 @@ PerformInteraction lists should always be as small as possible by UX design. How
 
 1. List with multiple action item per choice
 
-  - For each item which has several more actions available:  
+  * For each item which has several more actions available:  
     Example:
   Searching for events in the vicinity.
   There might be a big number of events. On each event you can
@@ -56,7 +56,7 @@ PerformInteraction lists should always be as small as possible by UX design. How
 
       *Note:* Only make the announcement the first time the search has been completed to reduce any kind of annoyance to the user.
 
-  - For each item only one action available:  
+  * For each item only one action available:  
   Example: scenario is already "Navigate To _<some location_>"  
   In contrast to the above, you may choose to use `PerformInteraction`.
 
