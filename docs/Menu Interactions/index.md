@@ -34,30 +34,28 @@ Applications must not register voice grammars using synonyms that include other 
 It is always a good practice to add relavent and useful information to the list items, for example if your app is a media app and you have a list of audio contents, adding information such as when the content was aired.
 
 #### Handling Lists
-PerformInteraction lists should always be as small as possibl by UX desgin. However, in cases where having long lists cannot be avoided, please follow the below best practices for better user experience.
+PerformInteraction lists should always be as small as possible by UX design. However, in cases where having long lists cannot be avoided, please follow the below best practices for better user experience.
 
 *Note:* Avoid opening `PerformInteraction` from within another `PerformInteraction`.  
+
 1. List with multiple action item per choice
-  - For each item which has several more actions available:  
-    Example:
-  Searching for events in the vicinity.
-  There might be a big number of events. On each event you can
-  select “Call venue”, “Navigate to it”, “Details”, “Play”
-  (playing the artist of a potential concert in the vicinity).
-      * Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
-      * Define softbuttons for each possible action and add the respective command to voice and menu.
-      * To cycle through the result list, you may use one of the below options:
-        * `Skip`button (which is currently only available for Media Apps)
-        * Softbuttons & Voice commands
-      * Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
-      * Announce the availablility of `Skip`hard button on the steering wheel for easy navigation.
+	
+	- For each item which has several more actions available:  
+  Example: Searching for events in the vicinity. There might be a big number of events. On each event you can select “Call venue”, “Navigate to it”, “Details”, “Play” (playing the artist of a potential concert in the vicinity).
+		- Present each result on it's own screen via `Show` and announce it with a pure voice alert via`Speak`.  
+       - Define softbuttons for each possible action and add the respective command to voice and menu.
+       - To cycle through the result list, you may use one of the below options:
+       - `Skip`button (which is currently only available for Media Apps)
+       - Softbuttons & Voice commands
+       - Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
+       - Announce the availablility of `Skip`hard button on the steering wheel for easy navigation.
 
       *Note:* Only make the announcement the first time the search has been completed to reduce any kind of annoyance to the user.
 
-  - For each item only one action available:  
+	- For each item only one action available:  
   Example: scenario is already "Navigate To _<some location_>"  
   In contrast to the above, you may choose to use `PerformInteraction`.
-
+  
 2. Simple lists
  If the results are known by the user or the result list is very small you can use `PerformInteraction` instead depending on the current use case.   
 
@@ -74,7 +72,7 @@ Result 1:
   MEDIA TRACK:    "1/25"   
   SOFTBUTTONS:   Action 1, Action 2, Action 3,...,Previous, Next, More...
   TTS:            "Result 1 <possibly more information about the result>"
-                  //First Time: Announce possible ways to naigate (skip buttons,
+                  //First Time: Announce possible ways to navigate (skip buttons,
                      voice command, etc..)
 
 ```
