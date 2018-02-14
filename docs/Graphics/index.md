@@ -1,6 +1,6 @@
 ## Graphics
 
-When implementing graphics into your apps you should make sure that the app looks good in both day and night mode. For graphics this implies that you should at either have a background or work with outlines. For icons outlines are needed to increase contrast in all situation. Light icons should have a dark contrast and dark icons should have a light contrast.
+When implementing graphics into your apps you should make sure that the app looks good in both day and night mode. For graphics this implies that you should at either have a background or work with outlines. For icons, outlines are needed to increase contrast in all situations. Light icons should have a dark contrast and dark icons should have a light contrast.
 
 Please ensure to use the correct dimensions for your images.
 
