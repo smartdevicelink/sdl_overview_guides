@@ -17,4 +17,4 @@ Additional notes about the audio data format:
 - There is no header (such as a RIFF header).
 - The audio sample is in linear PCM format.
 - The audio data includes only one channel (i.e. monaural).
-- For an 8 bit sample rate, the audio data is unsigned. For a 16 bit sample rate, it will be signed and little endian.
+- For an 8 bit width, the audio data is unsigned. For a 16 bit width, it will be signed and little endian.
