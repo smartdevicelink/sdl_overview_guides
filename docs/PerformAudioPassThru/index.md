@@ -1,6 +1,6 @@
 ## PerformAudioPassThru
 
-`PerformAudioPassThru` feeds you with audio data through the vehicle’s microphone. The audio data could be used in cloud-based and on-line voice recognition to achieve dynamic and diversified user interaction, like POI search, information query, or even record the voice when the driver is singing. The audio data is in form of PCM, and its sampling rate, bit width, timeout can be set in the `PerformAudioPassThru` request per your requirement. The headunit transmits its supported parameters via the `registerAppInterface` response. 16bit/16kHz is a widely supported configuration, which delivers good audio quality.
+`PerformAudioPassThru` feeds you audio data from the vehicle’s microphone. The audio data can be used in cloud-based and on-line voice recognition to achieve dynamic user interaction, such as POI search, information query, or even record when the driver is singing. The audio data will be in PCM format. The sampling rate, bit width, and timeout can be set, however, the supporting parameters will be sent in the `registerAppInterface` response. Generally, 16bit width, 16kHz sample rate will be supported.
 
 The parameter `muteAudio` is used to define whether or not to mute current audio source during AudioPassThru session.
 
@@ -10,11 +10,11 @@ If you want to mix the input audio from `PerformAudioPassThru` session with curr
 
 `onAudioPassThru` keeps you updated with the audio data transfer every 250ms.
 
-`EndAudioPassThru` enables you to end the audio capture, prematurely. This is useful if your app analyzes the audio level and detects that the user stopped speaking.
+`EndAudioPassThru` enables you to end the audio capture prematurely. This is useful if your app analyzes the audio level and detects that the user has stopped speaking.
 
-The format of audio data is described as follows:
+Additional notes about the audio data format:
 
-- It does not include any header like RIFF header at the beginning.
+- There is no header (such as a RIFF header).
 - The audio sample is in linear PCM format.
 - The audio data includes only one channel (i.e. monaural).
-- For bit rates of 8 bits, the audio samples are unsigned. For bit rates of 16 bits, the audio samples are signed and are in little endian.
+- For an 8 bitrate, the audio data is unsigned. For a 16 bitrate, they will be signed and little endian.
