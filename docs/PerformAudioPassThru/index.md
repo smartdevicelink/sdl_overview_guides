@@ -1,6 +1,6 @@
 ## PerformAudioPassThru
 
-`PerformAudioPassThru` feeds you audio data from the vehicle’s microphone. The audio data can be used in cloud-based and on-line voice recognition to achieve dynamic user interaction, such as POI search, information query, or even record when the driver is singing. The audio data will be in PCM format. The sampling rate, bit width, and timeout can be set, however, the supporting parameters will be sent in the `registerAppInterface` response. Generally, 16bit width, 16kHz sample rate will be supported.
+The `PerformAudioPassThru` RPC feeds you audio data from the vehicle’s microphone. The audio data can be used in cloud-based and on-line voice recognition to achieve dynamic user interaction, such as POI (point of interest) search, information query, or even record when the driver is singing. The audio data will be in uncompressed PCM format. The sampling rate, bit width, and timeout can be set, however, the supporting parameters will be sent in the `registerAppInterface` response. Generally, 16 bit width, 16kHz sample rate will be supported.
 
 The parameter `muteAudio` is used to define whether or not to mute current audio source during AudioPassThru session.
 

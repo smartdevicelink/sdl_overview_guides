@@ -25,7 +25,7 @@ Below is an example of the Pandora home screen using the MainFields and displayi
 
 #### Using presets
 
-If you app features different stations or streams you should consider allowing the user to save these stations to preset buttons. To received notifications about preset button presses please use the `subscribeButton` RPC with the respective presets as arguments. On some SDL implementations you will be able to change the text on a preset button. To change this text use the `customPresets` array in the `show` RPC.
+If your app features different stations or streams you should consider allowing the user to save these stations to preset buttons. To receive notifications about preset button presses please use the `subscribeButton` RPC with the respective presets as arguments. On some SDL implementations you will be able to change the text on a preset button. To change this text use the `customPresets` array in the `show` RPC.
 
 #### Managing Audio
 When you receive the `NOT_AUDIBLE` state you should pause the audio and resume when you receive `AUDIBLE`. The pausing and resuming should be independent on the current `HMILevel` state.

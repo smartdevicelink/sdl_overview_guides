@@ -47,7 +47,7 @@ _line 3_ and _line 4_: Other information which might be useful, but not pertinen
 
     For the above scenarios, as a feedback you may let the user know that the application might not work as expected due to the lack of availability of vehicle data. Refer to the [Standard Interaction Phrases](#standard-interaction-phrases) section for sample voice/text messages.
 
-    Note that some RPCs are protected by policies for every OEMs. To gain access to such RPCs contact the OEM.     
+    Note that some RPCs are protected by policies for every OEM. To gain access to such RPCs, contact the OEM.     
 
   * Using ScrollableMessage  
     `ScrollableMessage` is a useful way to show and display text to a user. In some markets like Europe and Asia, `ScrollableMessage` can be used at any time, to show a message or other relevant information that wouldn’t fit on an `Alert`. It is important to note that in North America, `ScrollableMessage` is limited in use and cannot be used while the vehicle is in motion. Please be advised that you may find these messages are blocked from being shown in that region. To detect this condition, use the `OnDriverDistraction` notification on vehicles before showing the message, or if you detect `ScrollableMessage` is rejected due to driver distraction restrictions, simply use a `Speak` or another
