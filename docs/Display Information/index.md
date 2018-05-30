@@ -22,6 +22,27 @@ _line 1_ and _line 2_: Use _line 1_ and _line 2_ for relatively continuous updat
 _line 3_ and _line 4_: Other information which might be useful, but not pertinent to functionality are best included on _Lines 3_ and _4_, if available.
 
 
+#### Number of Custom Softbuttons
+
+When using `Show` in combination with `SetDisplayLayout`, depending on the OEM, the number of custom softbuttons on each display layout will differ. The standard format of softbuttons for each system is as follows:
+
+Layout | Standard # of Softbuttons
+-----------|-------------
+DOUBLE\_GRAPHIC\_WITH\_SOFTBUTTONS	| 8
+GRAPHIC\_WITH\_TEXT |	0
+GRAPHIC\_WITH\_TEXT\_AND_SOFTBUTTONS |	2
+GRAPHIC\_WITH\_TEXTBUTTONS	| 3
+GRAPHIC\_WITH\_TILES |	3
+LARGE\_GRAPHIC\_WITH\_SOFTBUTTONS	| 8
+MEDIA	| 8
+NON\_MEDIA	 | 8
+TEXT\_AND\_SOFTBUTTONS\_WITH\_GRAPHIC	| 2
+TEXT\_WITH\_GRAPHIC |	0
+TEXTBUTTONS\_ONLY	 | 8
+TEXTBUTTONS\_WITH\_GRAPHIC	| 3
+TILES\_ONLY	| 7
+TILES\_WITH\_GRAPHIC |	3
+
 
 #### Provide Feedback
 
