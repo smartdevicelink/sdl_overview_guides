@@ -31,7 +31,7 @@ It is always important to keep in mind the voice engine in the head unit will al
 
 ```
 Example:
-App Name "Spotify" sounds like "Schpottifei" (which is not how the app name
+App Name "Livio Music" sounds like "Leeveeo Moozik" (which is not how the app name
 is supposed to be pronounced) if the head unit is set to German.
 ```
 
@@ -39,10 +39,10 @@ To prevent your app name from being pronounced in from happening and for the use
 
 ```
 Example:
-Fill `TTSName`and one value of `VRSynonyms` with `Zppotifey` when the
-Spotify connects to a German head unit to get the correct pronunciation
+Fill `TTSName`and one value of `VRSynonyms` with `Leeveeo Moozik` when the
+Livio Music connects to a German head unit to get the correct pronunciation
 of the app name in German. This is the only way to enable the user to start
-the app with the english pronunciation of Spotify and also allow the head
+the app with the english pronunciation of Livio Music and also allow the head
 unit to pronounce name of the app correctly.
 ```
 
