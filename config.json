@@ -1,6 +1,6 @@
 {
     "Authors": [
-        "Joey Grover", Timur Pulathaneli", "Joel Fischer"
+        "Joey Grover", "Timur Pulathaneli", "Joel Fischer"
     ],
     "languages": [
         "en"
@@ -10,56 +10,56 @@
             "name": "Overview"
         },
         {
-             "name":"Getting Started"
+             "name":"Getting Started",
              "navigation":[
                 {
                     "name":"Introduction"
                 },
                 {
-                    "name": "Establishing a Transport"
+                    "name":"Establishing a Transport"
                 },
                 {
-                    "name": "Starting an SDL Session"
+                    "name":"Starting an SDL Session"
                 },
                 {
-                    "name": "Registering an Applicaiton
+                    "name":"Registering an Applicaiton"
                 },
                 {
-                    "name": "Activating the App"
+                    "name":"Activating the App"
                 }
             ]
         },
         {
-            "name":"Best Practices"
+            "name":"Best Practices",
              "navigation":[ 
                 {
-                    "name": "Overview"
+                    "name":"Overview"
                 }, 
                 {
-                    "name": "Display Information"
+                    "name":"Display Information"
                 },
                 {
-                    "name": "Graphics"
+                    "name":"Graphics"
                 },
                 {
-                    "name": "Languages"
+                    "name":"Languages"
                 },
                 {
-                    "name": "Menu Interactions"
+                    "name":"Menu Interactions"
                 },
                 {
-                    "name": "PerformAudioPassThru"
+                    "name":"PerformAudioPassThru"
                 },
                 {
-                    "name": "Audio Books"
+                    "name":"Audio Books"
                 },
                 {
-                    "name": "Music Apps"
+                    "name":"Music Apps"
                 },
             ]
         },
         {
-        "name": "FAQ"
+        "name":"FAQ"
         }
     ]
 }
