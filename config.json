@@ -59,6 +59,12 @@
             ]
         },
         {
+            "name":"Protocol Spec"
+        },
+        {
+            "name":"RPC Spec"
+        },
+        {
         "name":"FAQ"
         }
     ]
