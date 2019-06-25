@@ -4,4 +4,4 @@ The first packet that gets sent is from the client SDL library to the SDL Core i
 
 The Core implementation should respond with a `StartServiceACK` that contains specific information as described in the protocol spec. After this moment, the SDL session has been defined and started for an app.
 
-![Step 2: Start the protocol session](overall_2.png) 
+![Step 2: Start the protocol session](assets/overall_2.png) 
