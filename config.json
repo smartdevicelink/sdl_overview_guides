@@ -30,6 +30,12 @@
             ]
         },
         {
+            "name":"Protocol Spec"
+        },
+        {
+            "name":"RPC Spec"
+        },
+        {
             "name":"Best Practices",
             "navigation":[ 
                 {
@@ -57,12 +63,6 @@
                     "name":"Music Apps"
                 }
             ]
-        },
-        {
-            "name":"Protocol Spec"
-        },
-        {
-            "name":"RPC Spec"
         },
         {
         "name":"FAQ"
