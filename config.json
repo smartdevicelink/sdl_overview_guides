@@ -31,9 +31,9 @@
         },
         {
             "name":"Best Practices",
-             "navigation":[ 
+            "navigation":[ 
                 {
-                    "name":"Overview"
+                    "name":"Best Practices Intro"
                 }, 
                 {
                     "name":"Display Information"
@@ -55,7 +55,7 @@
                 },
                 {
                     "name":"Music Apps"
-                },
+                }
             ]
         },
         {
