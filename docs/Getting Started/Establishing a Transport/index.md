@@ -38,7 +38,7 @@ Android has a specification called AOA that allows apps to communicate over a US
 #### TCP
 -  Secondary
 
-Due to limitations for the iOS platform (discussed int he next section), Android can only use the TCP transport as a secondary transport in production. 
+Due to limitations for the iOS platform (discussed in the next section), Android can only use the TCP transport as a secondary transport in production. 
 
 ### iOS
 
@@ -47,10 +47,31 @@ Due to limitations for the iOS platform (discussed int he next section), Android
 
 Apple has a proprietary technology that apps connect through to communicate any sort of data over bluetooth or USB. Unfortunately this means that none of that information can be shared here. Both of those transports will have to integrate with that technology according to the Apple specifications. For more information see [here](https://developer.apple.com/programs/mfi/).
 
-##### Additional Notes
- - Multisession protocol string - This is the preferred method to connect to SDL applications as it eliminates a lot of the stability issues that have been observed with the single session method. See [this evolution proposal](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0080-Support-for-MultiSession-protocol-string.md) for its acceptance into the project.
+##### Single vs Multisession Protocol
 
- //TODO diagram to show how multisession vs "hub" version works
+The way IAP works is that you have a protocol string that a hardware device and an app declare that they can use. When iOS sees a hardware device with a known protocol string, it notifies the app. The app can open a 1-1 connection with the hardware using that protocol string as an identifier for the connection. 
+
+###### Single session protocol
+
+There are two different connection strategies that the iOS library uses. The first is the hub strategy for connecting to single session iAP protocol. This method is only included in the library as legacy support and should not be implemented in new modules. The hub strategy was developed to allow multiple apps to connect to the hardware. The hardware has 30 protocol strings available. Each app will attempt to connect to one protocol (prot0, called the control protocol) in order to receive one byte of data. That data is a number 1-29. The app will then disconnect from the control protocol and connect to a data protocol corresponding to the number they received (prot1-prot29). The app is given a timeout based on a hash of the app’s name. So the apps will try to connect to the control string after that timeout. If they fail, they’ll wait the timeout 3 more times and attempt to connect to get their data protocol number.
+
+![Single app with hub strategy](assets/ios_hub_single_app.png) 
+
+
+
+This strategy works, but has some very large downsides. As more apps try to connect to the control protocol it is near at random chance what the app's delay threshold is set to and if there will be any collision connection attempts to the necessary control protocol prot0.
+
+
+![Multi app with hub strategy](assets/ios_hub_multi_app.png) 
+
+
+###### Multisession protocol
+
+Multisession is a newer iAP feature that basically just allows multiple connections to a single protocol string. So every app can connect to the multisession protocol string without needing to wait and trying to manage connection timing to the single control string that only allows one connection at a time. This is the preferred method to connect to SDL applications as it eliminates a lot of the stability issues that have been observed with the single session method.  See [this evolution proposal](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0080-Support-for-MultiSession-protocol-string.md) for its acceptance into the project.
+
+
+![Multisession approach](assets/ios_multisession.png) 
+
 
 #### TCP
 - Secondary
@@ -59,7 +80,7 @@ iOS has a very strict limitation that no TCP connection can be maintained while 
 
 ### Java SE
 
-#### Websocket
+#### Websocket Server
 - Primary
 
 The only transport currently available by default form the SDL Java SE library is a web socket server connection. The Java SE app is usually destined to run directly on the same device as the SDL Core and HMI. Determining when the Java SE app should start listening to that web socket port will need to be defined by the SDL Core integrator. This will likely be during start up of the device, the Java SE app can simply be started and wait for the user to select the application from the application list. 
