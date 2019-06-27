@@ -2,6 +2,9 @@
 
 This is an overview of how SmartDeviceLink (SDL) works. It will go through higher level discussions about certain aspects of SDL to give an intro level of understanding. 
 
+## Supported Platforms
+
+This section quickly points out which platforms for the application, Core, and HMI sides of the project can be used.
 
 ## Getting Started
 

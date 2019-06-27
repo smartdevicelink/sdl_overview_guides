@@ -10,6 +10,9 @@
             "name": "Overview"
         },
         {
+            "name": "Supported Platforms"
+        },
+        {
              "name":"Getting Started",
              "navigation":[
                 {
