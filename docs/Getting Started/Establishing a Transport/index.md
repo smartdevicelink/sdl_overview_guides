@@ -101,7 +101,9 @@ iOS has a very strict limitation that no TCP connection can be maintained while 
 #### Websocket Server
 - Primary
 
-The only transport currently available by default form the SDL Java SE library is a web socket server connection. The Java SE app is usually destined to run directly on the same device as the SDL Core and HMI. Determining when the Java SE app should start listening to that web socket port will need to be defined by the SDL Core integrator. This will likely be during start up of the device, the Java SE app can simply be started and wait for the user to select the application from the application list. 
+The only transport currently available by default form the SDL Java SE library is a web socket server connection. The Java SE app is usually destined to run directly on the same device as the SDL Core and HMI. Determining when the Java SE app should start listening to that web socket port will need to be defined by the SDL Core integrator. This will likely be during start up of the device, the Java SE app can simply be started and wait for the user to select the application from the application list. See the [0158 - Cloud App Transport Adapter](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0158-cloud-app-transport-adapter.md) proposal for more information.
+
+![Socket connection](assets/socket.png) 
 
 #### Secondary Transport
 
@@ -113,7 +115,9 @@ Currently the Java SE client library does not support a secondary transport as t
 - Primary 
 
 Java EE is usually built around Java Beans in order to easily handle a lot of simultaneous connections that each have their own, independent state. This is another example of a proprietary or specifically licensed transport. Because of this, the Java EE library has what's called a Custom Transport. This also developers to hook into the Java EE Bean framework without the SDL library having to include that code into the library itself. 
-Java EE apps are designed to be long running applications that live on an off-board server. The SDL Core implementation will connect out to these applications once they are selected from the app list on the HMI. 
+Java EE apps are designed to be long running applications that live on an off-board server. The SDL Core implementation will connect out to these applications once they are selected from the app list on the HMI. See the [0158 - Cloud App Transport Adapter](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0158-cloud-app-transport-adapter.md) proposal for more information.
+
+The previous flow for JavaSE can be followed as the difference will depend on the type of custom transport used. For most cases, using Java Beans is the best flow and will only differ in adding multiple connections to the app via independent instances created by a type of load balancer. 
 
 #### Secondary Transport
 
