@@ -35,6 +35,14 @@ This section defines the lowest level of SDL. It defines how the byte level code
 
 The majority of messages that get sent between the app library and head unit are of RPC messages. These messages are actually wrapped in the SDL Protocol header and format. The RPC messages contain information to perform certain actions, notify of certain events, etc. It defines much of what SDL can do.
 
+### Policies
+
+SmartDeviceLink uses a policies for enforcing rules on what messages can be sent by and to connected applications. This section will give an overview of that functionality and how the policy table is updated.
+
+### App Services
+
+Connected applications can augment a head unit's service offerings using SDL. Head units can use the service specific information into their own system as a unified API for that service type. This includes displaying service data outside the app's template view and make that app feel integrated directly with the head unit.
+
 ### Best Practices
 
 There are certain items that should be followed that aren't necessary defined as requirements. These items are shared within this section. 
