@@ -1,6 +1,6 @@
 # Establishing a Transport
 
-SDL is transport agnostic, meaning it can work over any potential transport. The important note here is that the projects themselves connect in a specific ways over certain transports. 
+SDL is theoretically transport agnostic, meaning it can work over any potential transport. However, due to limitations of app platforms, only certain transports are available for connecting to given app platforms.
 
 The first step in using SDL is to establish a connection over a primary transport.
 

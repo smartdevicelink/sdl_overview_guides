@@ -4,7 +4,7 @@ This is an overview of how SmartDeviceLink (SDL) works. It will go through highe
 
 SmartDeviceLink is a connectivity protocol and set of associated libraries that allow third-party applications to communicate with cars. This allows drivers to safely access the content they want through their vehicle. 
 
-There are different components to SDL that make everything work. The following diagram shows how some of those pieces are connected. 
+Many different components make SDL work. The following diagram shows how some of those pieces are connected. 
 
 <br><br>
 ![High Level Diagram](assets/HighLevelDiagram.png) 

@@ -55,7 +55,7 @@ The following is an example of populating specific areas of the HMI with app ser
 
 ##### Collapsed View
 
-This view contains very brief info from the app service provider including the next navigation instruction icon from the navigation service provider, the album art of the currently playing song from a media service provider, and the current outside temperature from the weather service provider. For this user experience, tapping on a certain tile will expand that app service, and a similar gesture like double tap, long press on a tile, or tapping on the up arrow icon will explode the view into an overlay that displays more of all the service data.
+This view contains very brief info from the app service including the next navigation instruction icon from the navigation service provider, the album art of the currently playing song from a media service provider, and the current outside temperature from the weather service provider. For this user experience, tapping on a certain tile will expand that app service, and a similar gesture like double tap, long press on a tile, or tapping on the up arrow icon will explode the view into an overlay that displays more of all the service data.
 
 ![App Service Collapsed](assets/app_service_collapsed.jpg) 
 
@@ -67,14 +67,14 @@ The expanded view for the navigation tile would include more specific data on th
 
 ##### Weather Expanded
 
-While the quick view of the weather service provides exterior `currentTemperature`, the expanded view provides more information on the current conditions including `temperatureHigh`/`temperatureLow` in temperature for the day, chance of precipitation (`precipProbability`), and the current `windSpeed`.
+The expanded weather view provides more information on the current conditions including the `temperatureHigh`/`temperatureLow` for the day, the chance of precipitation (`precipProbability`), and the current `windSpeed`.
 
 ![Weather Expanded](assets/app_service_weather_expanded.jpg) 
 
 
 ##### Media Expanded
 
-Album art is used for the quick look icon for the media service section; it is populated from the `mediaImage` data supplied by the media service provider. The expanded view gets more data added using `mediaTitle` and `mediaArtist` while also providing basic playback controls that will send `OnButtonPress` RPCs to the app service provider. 
+The expanded media view shows additional information using `mediaTitle` and `mediaArtist` while also providing basic playback controls that will send `OnButtonPress` RPCs to the app service provider.
 
 ![Media Expanded](assets/app_service_media_expanded.jpg) 
 
