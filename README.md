@@ -1,4 +1,4 @@
-# SDL Best Practices
-Best Practices Guide content for the [SDL Developer Portal](https://smartdevicelink.com/en/guides/best-practice-guide/overview/).
+# SDL Overview Guides
+SDl Overview Guide content for the [SDL Developer Portal](https://smartdevicelink.com/en/guides/sdl-overview-guides/introduction/).
 
-This is where the documentation for instructing app partners on the best way to handle creating their app will be held.
+This is where the documentation for describing most of SDL features will be held.
