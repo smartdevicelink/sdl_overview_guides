@@ -32,6 +32,12 @@ An app service provider is the originator of a service that provides updates of 
 
 It is up to each app to decide if they wish to expose their service or not. It is not a requirement for apps to do so. 
 
+### Request an Action be Taken by an App Services Provider
+
+There are a few ways in which an app service provider may grant control over its features. The first is through regular SDL RPCs. The SDL Core project has the ability pass certain RPCs to app service providers when they make sense in terms of the app service type's context. For example, the `SendLocation` RPC is used by the navigation system to add as a destination or waypoint. If a different app other than the embedded navigation system is acting as the active app service, that RPC should be routed there. This allows users to bring in their apps that take the place of built-in services, but allow other apps who interact with those system to continue using their same RPCs and expect similar functionality. This type of action happens passively to both consumer and producers.
+
+
+The second method to access control of the app service provider is through the `PerformAppServiceInteraction` RPC. This RPC will require the app consumer to have a closer relationship to the app service provider as it will use specific URIs that the provider recognizes. It enables providers to expose a greater feature set to app service consumers without the need of SDL RPC spec modifications and updated SDL Core implementations. App service providers are not required to implement this feature, nor are they required to honor a request. They are expected to reply to the request though. See [the RPC spec](https://github.com/smartdevicelink/rpc_spec#performappserviceinteraction) for more information.
 
 ## App Service Consumers
 
@@ -78,19 +84,3 @@ Album art is used for the quick look icon for the media service section; it is p
 The exploded view demonstrates how more information could be used from the app service providers to populate large UI elements. 
 
 ![App Service Exploded](assets/app_service_exploded.jpg) 
-
-
-
-## Request an Action be Taken by an App Services Provider
-
-There are a few ways in which an app service provider may grant control over its features. The first is through regular SDL RPCs. The SDL Core project has the ability pass certain RPCs to app service providers when they make sense in terms of the app service type's context. For example, the `SendLocation` RPC is used by the navigation system to add as a destination or waypoint. If a different app other than the embedded navigation system is acting as the active app service, that RPC should be routed there. This allows users to bring in their apps that take the place of built-in services, but allow other apps who interact with those system to continue using their same RPCs and expect similar functionality. This type of action happens passively to both consumer and producers.
-
-
-The second method to access control of the app service provider is through the `PerformAppServiceInteraction` RPC. This RPC will require the app consumer to have a closer relationship to the app service provider as it will use specific URIs that the provider recognizes. It enables providers to expose a greater feature set to app service consumers without the need of SDL RPC spec modifications and updated SDL Core implementations. App service providers are not required to implement this feature, nor are they required to honor a request. They are expected to reply to the request though. See [the RPC spec](https://github.com/smartdevicelink/rpc_spec#performappserviceinteraction) for more information.
-
-
-
-
-
-
-
