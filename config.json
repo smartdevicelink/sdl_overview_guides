@@ -1,34 +1,74 @@
 {
     "Authors": [
-        "Timur Pulathaneli", "Joel Fischer"
+        "Joey Grover", "Timur Pulathaneli", "Joel Fischer"
     ],
     "languages": [
         "en"
     ],
     "navigation": [
         {
-            "name": "Display Information"
+            "name": "Introduction"
         },
         {
-            "name": "Graphics"
+            "name": "Supported Platforms"
         },
         {
-            "name": "Languages"
+             "name":"Getting Started",
+             "navigation":[
+                {
+                    "name":"Establishing a Transport"
+                },
+                {
+                    "name":"Starting an SDL Session"
+                },
+                {
+                    "name":"Registering an Application"
+                },
+                {
+                    "name":"Activating the App"
+                }
+            ]
         },
         {
-            "name": "Menu Interactions"
+            "name":"Protocol Spec"
         },
         {
-            "name": "PerformAudioPassThru"
+            "name":"RPC Spec"
         },
         {
-            "name": "Audio Books"
+            "name":"Policies"
         },
         {
-            "name": "Music Apps"
+            "name":"App Services"
         },
         {
-            "name": "FAQ"
+            "name":"Best Practices",
+            "navigation":[  
+                {
+                    "name":"Display Information"
+                },
+                {
+                    "name":"Graphics"
+                },
+                {
+                    "name":"Languages"
+                },
+                {
+                    "name":"Menu Interactions"
+                },
+                {
+                    "name":"PerformAudioPassThru"
+                },
+                {
+                    "name":"Audio Books"
+                },
+                {
+                    "name":"Music Apps"
+                }
+            ]
+        },
+        {
+            "name":"FAQ"
         }
     ]
 }
