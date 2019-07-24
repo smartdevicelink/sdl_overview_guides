@@ -16,9 +16,6 @@
              "name":"Getting Started",
              "navigation":[
                 {
-                    "name":"Introduction"
-                },
-                {
                     "name":"Establishing a Transport"
                 },
                 {
@@ -46,10 +43,7 @@
         },
         {
             "name":"Best Practices",
-            "navigation":[ 
-                {
-                    "name":"Best Practices Intro"
-                }, 
+            "navigation":[  
                 {
                     "name":"Display Information"
                 },
