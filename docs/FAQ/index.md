@@ -9,7 +9,9 @@ Here are a few of the most common questions new developers have around the Smart
 - [I didn't find the answers I was looking for, where else can I look?](#i-didn't-find-the-answers-i-was-looking-for,-where-else-can-i-look?)
 
 ## Is WiFi a supported transport?<a id="is-wifi-a-supported-transport?"></a>
-The WiFi transports are supported with a few limitations. First, the TCP variant of the transport is only allowed as a secondary transport. This means that a primary transport (bluetooth, USB) has to be connected first in order for the TCP transport to connect. Secondly, this transport can be used the development and debugging phase of SDL integration and will act as the primary transport in that situation. For more information please see the evolution proposal [SDL 0141: Supporting simultaneous multiple transports](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0141-multiple-transports.md) 
+WiFi transports are supported in two ways with various limitations. First, the production version is only available as a secondary transport. This means that a primary transport (such as Bluetooth or USB) has to be connected first in order for the TCP transport to connect.
+
+Secondly, this transport can be used in the development and debugging phase of SDL integration and will act as the primary transport in that situation. For more information please see the evolution proposal [SDL 0141: Supporting simultaneous multiple transports](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0141-multiple-transports.md).
 
 ## Can I implement custom HMI templates?<a id="an-i-implement-custom-hmi-templates?"></a>
 This is possible, but not recommended as any app that builds itself for the head unit's custom template would not work with any other systems.  If new templates are desired, they should go through the SDL Evolution Process and be adopted by the project.

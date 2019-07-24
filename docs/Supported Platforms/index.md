@@ -43,8 +43,8 @@ The HMI can be written in any platform as long as it can connect through websock
 
 #### HTML
 
-HTML is the most widely supported platform for developing the HMI. There are several examples of using HTML in the open, the best example is the [Generic HMI](https://github.com/smartdevicelink/generic_hmi)
+HTML is the most widely supported platform for developing the HMI. There are several examples of using HTML in the open, and the best example is the [Generic HMI](https://github.com/smartdevicelink/generic_hmi).
 
 #### QT
 
-Some partners have created HMI implementations using QT. This platform is useable, but tends to be a bit less dynamic than HTML.
+Some partners have created HMI implementations using QT. This platform is useable, but is a bit less dynamic and more difficult to update than HTML.

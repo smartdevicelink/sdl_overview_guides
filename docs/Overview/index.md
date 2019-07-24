@@ -3,7 +3,7 @@
 This is an overview of how SmartDeviceLink (SDL) works. It will go through higher level discussions about certain aspects of SDL to give an intro level of understanding. 
 
 
-SmartDeviceLink is a connectivity protocol that allows applications to communicate with cars. This allows drivers to safely access the content they want through their vehicle in safely designed manor. 
+SmartDeviceLink is a connectivity protocol and set of associated libraries that allow third-party applications to communicate with cars. This allows drivers to safely access the content they want through their vehicle. 
 
 There are different components to SDL that make everything work. The following diagram shows how some of those pieces are connected. 
 
@@ -16,36 +16,36 @@ There are different components to SDL that make everything work. The following d
 
 ### Supported Platforms
 
-This section quickly points out which platforms for the application, Core, and HMI sides of the project can be used.
+This section quickly points out which platforms can be used for the application, Core, and HMI parts of the project.
 
 ### Getting Started
 
 The first few guides will be centered around getting SDL started. 
 
-1. Establish a transport level connection
-2. App initiates a protocol level session start, Core accepts.
-3. App registers itself onto the head unit. Core responds with system information
-4. Activating the App
+1. Establish a connection over the transport.
+2. How the app starts the SDL protocol and how Core accepts.
+3. How the app registers itself onto the head unit and how Core responds with system information.
+4. How the app is activated for user interaction
 
 ### Protocol Spec
 
-This section defines the lowest level of SDL. It defines how the byte level code is communicated between the application library and the head unit / Core. It contains information on what protocol level packets are used, basic handshakes, etc.
+This section describes the lowest level of SDL. It defines how the byte level data is communicated between the application library and the head unit / Core. It contains information on what protocol level packets are used, basic handshakes, etc.
 
 ### RPC Spec
 
-The majority of messages that get sent between the app library and head unit are of RPC messages. These messages are actually wrapped in the SDL Protocol header and format. The RPC messages contain information to perform certain actions, notify of certain events, etc. It defines much of what SDL can do.
+This section describes the higher level JSON-RPC messages that get sent. These messages are higher-level messages sent using the protocol spec's lower level messages (see above). The majority of messages that get sent between the app and head unit are RPC messages. The RPC messages contain information to perform and respond to actions, notify of events, etc. The RPC spec defines much of what SDL can do.
 
 ### Policies
 
-SmartDeviceLink uses a policies for enforcing rules on what messages can be sent by and to connected applications. This section will give an overview of that functionality and how the policy table is updated.
+SmartDeviceLink uses policies to enforce rules about which messages can be sent to and from connected apps. This section will give an overview of that functionality and how to update the policy table, which declares these policies for all known apps.
 
 ### App Services
 
-Connected applications can augment a head unit's service offerings using SDL. Head units can use the service specific information into their own system as a unified API for that service type. This includes displaying service data outside the app's template view and make that app feel integrated directly with the head unit.
+Connected applications can augment a head unit's service offerings (such as navigation and weather) using SDL. Head units can feed the service specific information into their own system as a unified API for that app service type. This includes displaying service data outside the app's template view and makes that app feel integrated directly with the head unit.
 
 ### Best Practices
 
-There are certain items that should be followed that aren't necessary defined as requirements. These items are shared within this section. 
+This section contains items that aren't hard requirements but are best practices to ensure that the widest variety of apps work properly with your head unit.
 
 ### FAQ
 

@@ -1,4 +1,4 @@
-## App Services
+# App Services
 
 #### Related Evolution Proposals
 
@@ -7,13 +7,13 @@
 - [0225 Update Published App Services ](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0225-update-published-app-services.md)
 - [0239 Media Service Data Progress Bar Improvements](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0239-media-service-data-progress-bar-improvements.md)
 
-### Overview
+## Overview
 
-App Services are a way for apps to offer augmented services to not only the onboard embedded system, but to other SDL connected apps. The data sent using this feature is very specific for the service type. This means the service consumer has all the necessary context around the data to help build experiences using that data. This allows them to be prepared to work with many different app providers of the same app service type without having to create unique integrations with each of their services. 
+App Services are a way for apps to offer augmented services to both the onboard embedded system and also to other SDL connected apps. The data sent using this feature is specific based on the app service type. This gives the app service consumer the necessary context for them to build experiences using that data. It also allows them to be prepared to work with many different app providers of the same app service type without having to create unique integrations with each of their services. 
 
-### Supported App Service Types?
+### Available App Service Types
 
-The defined and supported app types as of writing this guide are as follows (linked to RPC spec data definitions):
+The defined and supported app types as of writing this guide are:
 
 - [Media](https://github.com/smartdevicelink/rpc_spec#mediaservicedata)
 - [Weather](https://github.com/smartdevicelink/rpc_spec#weatherdata)
@@ -23,23 +23,25 @@ For the up-to-date list, the [`AppServiceType`](https://github.com/smartdeviceli
 
 #### Future App Service Types
 
-The current list of app services is by no means the only services that will be added. These services were just the first round of types to be added for their familiarity and usefulness in terms of creating an in-car user experience. Also, as the original proposal points out, as new services become available even older modules with old versions of SDL Core can still manage the publishing and subscription of those services using the new types. While the module will likely not be able to make use of the new service, other SDL connected applications can access them as they become defined in the RPC spec and available from installed apps.
+The current list of app services is by no means the only services that will ever be available. These services are just the first round of types to be added for their familiarity and usefulness in terms of creating an in-car user experience. As new services become available head units with old versions of SDL Core can still manage the publishing and subscription of those services using the new types. While the module will not be able to make use of the new service, other SDL connected applications can access them as they become defined in the RPC spec and are made available in apps.
 
 
-### Who is an App Service Provider?
+### App Service Providers
 
-An app service provider is the originator of a service that provides updates of related service data. For example, a connected music player application can be a Media Service or an embedded Navigation app can be a Navigation Service. The app service provider can live on either side of the SDL connection, core or application library side.
+An app service provider is the originator of a service that provides updates of related service data. For example, a connected music player application can be a Media Service or an embedded Navigation app can be a Navigation Service. Therefore an app service provider can live on either side of the SDL connection, core or application library side.
 
 It is up to each app to decide if they wish to expose their service or not. It is not a requirement for apps to do so. 
 
 
-### Who is an App Service Consumer?
+### App Service Consumers
 
-An app service consumer retrieves and possibly subscribes to updates of service data that is provided through an app service provider. For example, the module side with SDL Core could use the media app service data from a music player app to place that information outside the standard templates provided. A connected SDL app could navigation app service data from the embedded navigation app service to determine the best place to fill up the car with gas. 
+An app service consumer retrieves and can subscribe to updates of service data that is provided by an app service provider. For example, the module side with SDL Core could use the media app service data from a music player app to place that information outside the standard SDL "app screen" templates.
 
-#### How does a module/Core use app service data as a consumer?
+A connected SDL app could retrieve navigation app service data from the embedded navigation app service to determine the best place to fill up the car with gas and then display that information in their SDL "app screen."
 
-The main use case for using app service data on the module as a consumer is to be able to present that data in a specific and predictable way. The module can maintain branding and their user experience by taking the service data and placing it outside the generic template boxes where they might populate that data with their embedded data normally.
+#### Consuming App Service Data on the Module
+
+The main use case for using app service data on the module as a consumer is to be able to present that data in a specific and predictable way. The module can maintain branding and their user experience by taking the service data and placing it outside the generic "app screen" template boxes. For example, they may populate the app service data into the places they usually populate their embedded data.
 
 ##### Example with Generic HMI
 
@@ -84,7 +86,7 @@ The exploded view demonstrates how more information could be used from the app s
 There are a few ways in which an app service provider may grant control over its features. The first is through regular SDL RPCs. The SDL Core project has the ability pass certain RPCs to app service providers when they make sense in terms of the app service type's context. For example, the `SendLocation` RPC is used by the navigation system to add as a destination or waypoint. If a different app other than the embedded navigation system is acting as the active app service, that RPC should be routed there. This allows users to bring in their apps that take the place of built-in services, but allow other apps who interact with those system to continue using their same RPCs and expect similar functionality. This type of action happens passively to both consumer and producers.
 
 
-The second method to access control of the app service provider is through the RPC `PerformAppServiceInteraction`. This RPC will require the app consumer to have a closer relationship to the app service provider as it will use specific URIs that the provider recognizes. This will enable providers to expose a greater feature set to consumers without the need of the SDL protocol modifications. App service providers are not required to implement this feature, nor are they expected to honor the request. They are expected to reply to the request though. See [here](https://github.com/smartdevicelink/rpc_spec#performappserviceinteraction) for 
+The second method to access control of the app service provider is through the `PerformAppServiceInteraction` RPC. This RPC will require the app consumer to have a closer relationship to the app service provider as it will use specific URIs that the provider recognizes. It enables providers to expose a greater feature set to app service consumers without the need of SDL RPC spec modifications and updated SDL Core implementations. App service providers are not required to implement this feature, nor are they required to honor a request. They are expected to reply to the request though. See [the RPC spec](https://github.com/smartdevicelink/rpc_spec#performappserviceinteraction) for more information.
 
 
 
