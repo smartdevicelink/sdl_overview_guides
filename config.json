@@ -36,6 +36,18 @@
             "name":"RPC Spec"
         },
         {
+            "name":"User Interface",
+            "navigation":[  
+                {
+                    "name":"Supported Templates"
+                },
+                {
+                    "name":"Static Icons"
+                }
+            ]
+
+        },
+        {
             "name":"Policies"
         },
         {
