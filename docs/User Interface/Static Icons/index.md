@@ -11,7 +11,7 @@ Name / Description            | Hex Value | Image Sample
 Accept Call / Active Phone Call / Initiate Phone Call      |   0x29    |<img src="assets/0x29.svg" width="64" height="64">
 Add Waypoint                                               |   0x1B    |<img src="assets/0x1B.svg" width="64" height="64">
 Album                                                      |   0x21    |<img src="assets/0x21.svg" width="64" height="64">
-Ambient Lighting                                           |   0x3d    |<img src="assets/0x3d.svg" width="64" height="64">
+Ambient Lighting                                           |   0x3d    |<img src="assets/0x3D.svg" width="64" height="64">
 Arrow - North                                              |   0x40    |<img src="assets/0x40.svg" width="64" height="64">
 Audio Mute                                                 |   0x12    |<img src="assets/0x12.svg" width="64" height="64">
 Audiobook Episode                                          |   0x83    |<img src="assets/0x83.svg" width="64" height="64">
