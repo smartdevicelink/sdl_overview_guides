@@ -21,7 +21,7 @@ It is encouraged to show static images of the album art, however moving or inter
 ###*Add Link to DisplayInformation*
 Below is an example of the Pandora home screen using the MainFields and displaying a graphic.
 
-![Livio Music Screenshot](assets/Livio Music Player.png)
+![Livio Music Screenshot](assets/LivioMusicPlayer.png)
 
 #### Using presets
 
