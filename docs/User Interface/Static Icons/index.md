@@ -3,7 +3,7 @@
 
 Static icons are images that should always be available for applications to use in their integration. These images can be used in any situation where an image is applicable including but not limited to soft buttons, menu items, and choice items.
 
-All Sample images can be downloaded from the [Generic HMI project](file:///smartdevicelink/generic_hmi)
+All Sample images can be downloaded from the [Generic HMI project](https://github.com/smartdevicelink/generic_hmi)
 
 
 Name / Description            | Hex Value | Image Sample
