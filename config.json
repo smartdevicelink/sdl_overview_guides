@@ -48,7 +48,18 @@
 
         },
         {
-            "name":"Policies"
+            "name":"Policies",
+            "navigation":[
+                {
+                    "name":"Overview"
+                },
+                {
+                    "name":"Policy Fields"
+                },
+                {
+                    "name":"App Policies"
+                }
+            ]
         },
         {
             "name":"App Services"
