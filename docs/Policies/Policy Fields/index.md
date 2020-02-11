@@ -93,31 +93,19 @@ This section contains several lists of urls that are used throughout SDL. Each s
 }
 ```
 
-#### 0x07
-
-A set of urls that are used when performing a PTU
-
-#### 0x04
-
-A set of urls that are used to retrieve module software updates
-
-#### queryAppsUrl
-
-A set of urls that are used to receive valid apps for querying on iOS devices
-
-#### lock_screen_icon_url
-
-A set of urls which each host an image that can be displayed by the application on the driver's device while the lock screen is active (ex. an OEM logo). This url is sent in a request to each application after they are first registered. The application proxy downloads the image and displays it along with the lock screen when driver distraction mode is active.
-
-#### custom_vehicle_data_mapping_url
-
-A set of urls that are used to retrieve a custom mapping file to be used by the HMI to translate requests for custom vehicle data (as defined in the `vehicle_data` section, see [this guide](https://smartdevicelink.com/en/guides/core/integrating-your-hmi/vehicle-data/#vehicle-data-mapping-file) for more information)
+* `0x07` - A set of urls that are used when performing a PTU
+* `0x04` - A set of urls that are used to retrieve module software updates
+* `queryAppsUrl` - A set of urls that are used to receive valid apps for querying on iOS devices
+* `lock_screen_icon_url` - A set of urls which each host an image that can be displayed by the application on the driver's device while the lock screen is active (ex. an OEM logo)
+    * This url is sent in a request to each application after they are first registered. The application proxy downloads the image and displays it along with the lock screen when driver distraction mode is active.
+* `custom_vehicle_data_mapping_url` - A set of urls that are used to retrieve a custom mapping file to be used by the HMI to translate requests for custom vehicle data (as defined in the `vehicle_data` section)
+    * See [this guide](https://smartdevicelink.com/en/guides/core/integrating-your-hmi/vehicle-data/#vehicle-data-mapping-file) for more information
 
 ### endpoint_properties
 
 This section includes properties corresponding to the keys in the `endpoints` section:
 
-* version - The version of the file associated with this url, currently only applies to `custom_vehicle_data_mapping_url`
+* `version` - The version of the file associated with this url, currently only applies to `custom_vehicle_data_mapping_url`
 
 #### Example Entry
 
@@ -243,13 +231,10 @@ Only applies when Core is built with `EXTENDED_POLICY=EXTERNAL_PROPRIETARY`, usi
 
 This section defines a list of RPCs which will be granted to each application that has access to this functional group. Within each entry are several fields to fine-tune permissions by HMI level or individual parameter:
 
-#### hmi_levels
-
-A list of HMI levels from which this RPC can be sent by an application if given permissions for this functional group.
-
-#### parameters
-
-A list of parameters which can be sent in this RPC by an application if given permissions for this functional group. If an application sends a parameter that it does not have access to, it will be filtered out, and Core will process the message normally from there. Primarily used for the purpose of controlling vehicle data permissions. If omitted, all parameters will be allowed.
+* `hmi_levels` - A list of HMI levels from which this RPC can be sent by an application if given permissions for this functional group.
+* `parameters` - A list of parameters which can be sent in this RPC by an application if given permissions for this functional group. Primarily used for the purpose of controlling vehicle data permissions.
+    * If an application sends a parameter that it does not have access to, it will be filtered out, and Core will process the message normally from there. 
+    * If omitted, all parameters will be allowed.
 
 !!! note
 Prior to Core version 6.0.0, the `parameters` field was only implemented for vehicle data related RPCs.
@@ -257,4 +242,4 @@ Prior to Core version 6.0.0, the `parameters` field was only implemented for veh
 
 ## Vehicle Data
 
-This section can be used to define custom vehicle data values for a system, as well as add capabilities for newer vehicle data items on an older module without updating the system software. See [SDL-0173](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0173-Read-Generic-Network-Signal-data.md) for more details.
+This section can be used to define custom vehicle data values for a system, as well as add capabilities for newer vehicle data items on an older module without updating the system software. See [this guide](https://smartdevicelink.com/en/guides/core/integrating-your-hmi/vehicle-data/#custom-vehicle-data) for more details.

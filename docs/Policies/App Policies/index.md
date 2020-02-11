@@ -3,7 +3,7 @@
 The app policies section defines permissions that each application is granted in the SDL environment. This is where you would change the default permissions for each application, or add rules for specific applications. Each key in this object is associated with the `fullAppID` field for an application (or `appID` if `UseFullAppID = false` in `smartDeviceLink.ini`), and each value is a struct which contains several fields to control permissions for this app. In addition, a few reserved keys exist for this section:
 
 * `default` - The set of permissions which are assigned to an app if it does not have its own entry in the app policies section.
-* `pre_DataConsent` - Only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode. The set of permissions which are assigned to an app if the device is not given SDL permissions by the user.
+* `pre_DataConsent` - The set of permissions which are assigned to an app if the device is not given SDL permissions by the user. Only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode.
 <!--* `device` - [TODO: find the exact purpose for this key]-->
 
 ## Basic Fields
@@ -176,17 +176,14 @@ These fields are used if the application is either be a provider or consumer of 
 
 This field defines the properties of the app services that this application is allowed to publish. Each key within this object corresponds to an app service type (ex. "MEDIA").
 
-#### service_names
-
-Defines a list of potential service names that an app can publish with this service type. If the `serviceName` field in the app's `PublishAppService.appServiceManifest` does not match one of the values in this list, the message will be rejected. If omitted, no restrictions will be applied to the `serviceName` parameter.
-
-#### handled_rpcs
-
-This field defines a list of permissions for RPCs that an app service could intercept via the [RPC passing](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/#rpc-passing) feature. If the handledRPCs field in the app's `PublishAppService.appServiceManifest` includes a function ID that is not in this list, the message will be rejected. This field is mandatory, but can be empty.
-
-##### function_id
-
-The [function ID](https://github.com/smartdevicelink/sdl_core/blob/master/src/components/interfaces/MOBILE_API.xml) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
+* `service_names` - Defines a list of potential service names that an app can publish with this service type. 
+    * If the `serviceName` field in the app's `PublishAppService.appServiceManifest` does not match one of the values in this list, the message will be rejected.
+    * If omitted, no restrictions will be applied to the `serviceName` parameter.
+* `handled_rpcs` - This field defines a list of permissions for RPCs that an app service could intercept via the [RPC passing](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/#rpc-passing) feature. 
+    * If the `handledRPCs` field in the app's `PublishAppService.appServiceManifest` includes a function ID that is not in this list, the message will be rejected. 
+    * This field is mandatory, but can be empty.
+    * Subfields:
+        * `function_id` - The [function ID](https://github.com/smartdevicelink/sdl_core/blob/master/src/components/interfaces/MOBILE_API.xml) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
 
 ### allow_unknown_rpc_passthrough
 
