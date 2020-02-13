@@ -221,7 +221,7 @@ This flag is used to determine if the cloud application should appear in the app
 
 ### hybrid_app_preference
 
-This option is used to determine the default behavior if the same app is available via a mobile device and over the cloud (determined by a duplicate `appName` search). The possible values for this option are `MOBILE`, `CLOUD`, or `BOTH`. 
+This option is used to determine the default behavior if the same app is available via a mobile device and over the cloud (determined by a duplicate `appName`). The possible values for this option are `MOBILE`, `CLOUD`, or `BOTH`. 
 
 * If this value is set to `MOBILE`, the cloud application will be unregistered and removed from the app list if both applications are available.
 * If this value is set to `CLOUD`, the mobile application will be unregistered if both applications are available.
