@@ -37,7 +37,7 @@ This field defines additional groups which are assigned to this application, wit
 
 ### nicknames
 
-Defines a list of potential appNames which an application is allowed to register with. If the appName field in the app's `RegisterAppInterface` does not match one of the values in this list, the message will be rejected. If omitted, no restrictions will be applied to appName.
+This field defines a list of potential appNames which an application is allowed to register with. If the appName field in the app's `RegisterAppInterface` does not match one of the values in this list, the message will be rejected. If omitted, no restrictions will be applied to appName.
 
 !!! note
 This field is mandatory when defining policies for a cloud application, in which case the first nickname will be used in the application list prior to app registration.
@@ -45,15 +45,15 @@ This field is mandatory when defining policies for a cloud application, in which
 
 ### AppHMIType
 
-Defines a list of AppHMITypes which an application is allowed to register with. If omitted, all AppHMITypes will be allowed.
+This field defines a list of AppHMITypes which an application is allowed to register with. If omitted, all AppHMITypes will be allowed.
 
 ### keep_context
 
-This field is a flag which allows or disallows an application to use soft buttons with the `KEEP_CONTEXT` action. Only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise this permission is always allowed.
+This field is a flag which allows or disallows an application to use soft buttons with the `KEEP_CONTEXT` action. This field only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise this permission is always allowed.
 
 ### steal_focus
 
-This field is a flag which allows or disallows an application to use soft buttons with the `STEAL_FOCUS` action. Only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise this permission is always allowed.
+This field is a flag which allows or disallows an application to use soft buttons with the `STEAL_FOCUS` action. This field only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise this permission is always allowed.
 
 ### priority
 
@@ -61,15 +61,15 @@ String value tied to the `notifications_per_minute_by_priority` section of `modu
 
 ### default_hmi
 
-Defines the default HMI level that the application will be initialized to when it is registered for the first time. Only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise the default HMI level is always `NONE`. 
+This field defines the default HMI level that the application will be initialized to when it is registered for the first time. This field only applies when Core is built with `EXTERNAL_PROPRIETARY` policy mode, otherwise the default HMI level is always `NONE`. 
 
 ### RequestType
 
-Defines a list of possible values for `requestType` that can be used in `OnSystemRequest` and `SystemRequest` RPCs when communicating with this app.
+This field defines a list of possible values for `requestType` that can be used in `OnSystemRequest` and `SystemRequest` RPCs when communicating with this app.
 
 ### RequestSubType
 
-Defines a list of possible values for `requestSubType` that can be used in `OnSystemRequest` and `SystemRequest` RPCs when communicating with this app.
+This field defines a list of possible values for `requestSubType` that can be used in `OnSystemRequest` and `SystemRequest` RPCs when communicating with this app.
 
 <!--### memory_kb
 
@@ -102,16 +102,16 @@ Heartbeat timeout for this application, deprecated in [Protocol Version 4](https
 
 ### certificate
 
-A string field containing a certificate for establishing a secure connection with the application. Currently only used for Cloud Applications when establishing a secure websocket connection.
+This field is a string value containing a certificate for establishing a secure connection with the application. This certificate is currently only used for cloud applications when establishing a secure WebSocket connection.
 
 ### encryption_required
 
-This flag which can be used to override `encryption_required` on the functional group level. If `false`, then this application will not be required to encrypt any of the RPCs which it has permissions to, even if the associated functional group has `encryption_required` set to `true`. Defaults to `true` if omitted.
+This flag can be used to override `encryption_required` on the functional group level. If `false`, then this application will not be required to encrypt any of the RPCs which it has permissions to, even if the associated functional group has `encryption_required` set to `true`. If omitted, this flag defaults to `true`.
 
 ## Remote Control Fields
 
 !!! note
-These permissions will only take effect if the application registers with the `REMOTE_CONTROL` AppHMIType
+These permissions will only take effect if the application registers with the `REMOTE_CONTROL` AppHMIType.
 !!!
 
 ### Example Entry
@@ -134,11 +134,11 @@ These permissions will only take effect if the application registers with the `R
 
 ### moduleType
 
-Defines a list of Remote Control module types (defined in the `ModuleType` enum in the [Mobile API](https://github.com/smartdevicelink/rpc_spec#moduletype)) which are accessible by the app. If empty, all module types will be allowed. If omitted, no module types will be allowed.
+This field defines a list of Remote Control module types (defined in the `ModuleType` enum in the [Mobile API](https://github.com/smartdevicelink/rpc_spec#moduletype)) which are accessible by the app. If empty, all module types will be allowed. If omitted, no module types will be allowed.
 
 ## App Service Fields
 
-These fields are used if the application is either be a provider or consumer of app service data. See our [App Service Provider Guide](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/) for more information on developing an application with these capabilities.
+These fields are used if the application is either a provider or consumer of app service data. See our [App Service Provider Guide](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/) for more information on developing an application with these capabilities.
 
 ### Example Entry
 
@@ -187,7 +187,7 @@ This field defines the properties of the app services that this application is a
 
 ### allow_unknown_rpc_passthrough
 
-This flag can be used to allow an application to pass RPCs which are unknown to Core (functions which were defined after Core's local API version) to an app service provider. Otherwise, such messages from this application will be rejected. Defaults to `false`.
+This flag can be used to allow an application to pass RPCs which are unknown to Core (functions which were defined after Core's local API version) to an app service provider. Otherwise, such messages from this application will be rejected. If omitted, this flag defaults to `false`.
 
 ## Cloud Application Fields
 

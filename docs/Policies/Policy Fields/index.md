@@ -2,7 +2,7 @@
 
 ## Module Config
 
-The module config section contains some global defaults that can be set for SDL
+The module config section contains some global defaults that can be set for SDL.
 
 ### Policy Table Update Configurations
 
@@ -146,7 +146,7 @@ This feature is used to restrict an app's control of the screen when they are in
 
 ### certificate
 
-A field used to replace the local certificate used for establishing secure connections with applications. Contains the full string representation of the certificate. If present in a PTU, this certificate will overwrite the existing certificate on the module.
+A field used to replace the local certificate used for establishing secure connections with applications. The value of this field is the full string representation of the certificate. If present in a PTU, this certificate will overwrite the existing certificate on the module.
 
 ## Consumer Friendly Messages
 
@@ -154,7 +154,7 @@ The consumer friendly messages section contains a list of messages which are mea
 
 ### languages
 
-Each `consumer_friendly_messages` entry contains a list of languages that it supports, with each language entry containing a struct with the following possible fields: `tts`, `label`, `line1`, `line2`, and `textBody`
+Each `consumer_friendly_messages` entry contains a list of languages that it supports, with each language entry containing a struct with the following possible fields: `tts`, `label`, `line1`, `line2`, and `textBody`.
 The HMI can retrieve this struct by key and language via the `SDL.GetUserFriendlyMessage` RPC.
 
 ## Functional Groupings
@@ -221,18 +221,18 @@ The functional groupings section contains the definitions for each named group o
 
 ### encryption_required
 
-This flag is used to specify whether the RPCs included in this functional group must be encrypted when assigned to an application. Can be overridden for a specific application by setting the same flag to `false` in its application policies entry (See [App Policies](../app-policies#security-fields)).
+This flag is used to specify whether the RPCs included in this functional group must be encrypted when assigned to an application. This flag can be overridden for a specific application by setting the same flag to `false` in its application policies entry (See [App Policies](../app-policies#security-fields)).
 
 ### user_consent_prompt
 
-Only applies when Core is built with `EXTENDED_POLICY=EXTERNAL_PROPRIETARY`, using this field means that the user will need to provide consent before an application can gain permission to use this group. The consent prompt given to the user will be retrieved from the `consumer_friendly_messages` entry tied to this value (ex. if the value is `AppPermissions`, the prompt will be retrieved from the `consumer_friendly_messages.messages.AppPermissions` field of the policy table).
+This field only applies when Core is built with `EXTENDED_POLICY=EXTERNAL_PROPRIETARY`, using this field means that the user will need to provide consent before an application can gain permission to use this group. The consent prompt given to the user will be retrieved from the `consumer_friendly_messages` entry tied to this value (ex. if the value is `AppPermissions`, the prompt will be retrieved from the `consumer_friendly_messages.messages.AppPermissions` field of the policy table).
 
 ### rpcs
 
 This section defines a list of RPCs which will be granted to each application that has access to this functional group. Within each entry are several fields to fine-tune permissions by HMI level or individual parameter:
 
 * `hmi_levels` - A list of HMI levels from which this RPC can be sent by an application if given permissions for this functional group.
-* `parameters` - A list of parameters which can be sent in this RPC by an application if given permissions for this functional group. Primarily used for the purpose of controlling vehicle data permissions.
+* `parameters` - A list of parameters which can be sent in this RPC by an application if given permissions for this functional group. This field is primarily used for the purpose of controlling vehicle data permissions.
     * If an application sends a parameter that it does not have access to, it will be filtered out, and Core will process the message normally from there. 
     * If omitted, all parameters will be allowed.
 
