@@ -18,19 +18,16 @@ While this could be a simple check hardcoded into Core that disallowed all apps 
 
 ## Policy Table Updates
 
-Beyond simply just hardcoding behaviors, it is also not expected that the app specific behaviors be static as well. Policy tables are made to be updated. This process can happen a few different ways, but the most common is leveraging the connected application to retrieve and pass the policy table. 
+Beyond simply just hardcoding behaviors, it is expected that app specific behaviors will not remain static, therefore policy tables are designed to be updated. This process can happen a few different ways, but the most common is leveraging the connected application to retrieve and transfer the policy table through to Core.
 
-SDL provides an [example policy server](https://smartdevicelink.com/en/guides/sdl-server/overview/) that can dynamically build and serve these policies to head units in order to update a head unit's policies dynamically. We strongly recommend that OEMs support policy table updates using a policy server so that apps which become available after a head unit ships can have specialized policies.
+SDL provides an [example policy server](https://smartdevicelink.com/en/guides/sdl-server/overview/) that can dynamically build and serve these policies to head units in order to update their existing policies. We strongly recommend that OEMs support policy table updates using a policy server so that apps which become available after a head unit ships can have specialized policies.
 
 ![Policy Table update](assets/ptu.png) 
 
+#### Policy Table Update Triggers
 
-#### Policy Update Triggers
+Some events will trigger Core to request an updated policy table. See the [Policy Table Update Configurations](../policy-fields/#policy-table-update-configurations) section for more information on how these triggers work. Examples include:
 
-Some events will trigger Core to request an updated policy table. Here are a few:
-
-- A new and unrecognized app connects.
-- After a set expiration date.
-- "x" number of ignition cycles have happened.
-
-
+- When a new and unrecognized app connects.
+- When a new device is first given SDL permissions.
+- When a configurable number of ignition cycles have occurred since the last update.
