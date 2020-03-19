@@ -12,7 +12,7 @@ Data resumption is used when an application requests to restore data used in the
 - Vehicle Data Subscriptions
 - Remote Control Module Consent
 
-For data resumption purposes, SDL Core must store application-related data such as menu commands, application global properties, voice recognition data, and subscriptions for previous ignition cycles after an unexpected disconnect or Ignition Off. 
+For data resumption purposes, SDL Core must store application-related data such as menu commands, application global properties, voice recognition data, and subscriptions for previous ignition cycles after an unexpected disconnect or ignition off. 
 
 !!! note
 If your SDL Core integration is configured to use a resumption data base, on every fourth ignition cycle, SDL clears all corresponding application-related data used for resumption.
