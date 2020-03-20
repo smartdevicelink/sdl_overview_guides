@@ -36,6 +36,9 @@
             "name":"RPC Spec"
         },
         {
+            "name":"RPC Spec Generator"
+        },
+        {
             "name":"User Interface",
             "navigation":[  
                 {
