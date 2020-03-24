@@ -55,8 +55,8 @@ optional arguments:
 
 This section describes the structure of the `MOBILE_API.xml` and the elements and attributes that are required for code generation. Refer to the `MOBILE_API.xsd` for the full schema definition.
 
-### `<interface>`
-The root element is the `<interface>`. The `<interface>` contains any number of `<enum>`, `<struct>` and `<function>`.
+### interface
+The root element is the `<interface>` tag. The `<interface>` tag contains any number of `<enum>`, `<struct>` and `<function>` tags.
 
 Example:
 ```xml
@@ -70,8 +70,8 @@ Example:
 </interface>
 ```
 
-### `<enum>`
-The `<enum>` element contains any number of `<element>` that represents a set of possible values. The `<enum>` has a required `"name"` attribute.
+### enum
+The `<enum>` element contains any number of `<element>` that represents a set of possible values. The `<enum>` has a required `name` attribute.
 
 Example:
 ```xml
@@ -98,7 +98,7 @@ The `<element>` has a required `"name"` attribute. For `string` enums, the value
 
 `<element>` could also have an `"internal_name"` attribute. This attribute is not used in communication with SDL Core, but it describes the `<element>` name for SDL libraries.
 
-### `<struct>`
+### struct
 `<struct>` is a complex data type. `<struct>` contains any number of `<param>`. The `<struct>` has a required `"name"` attribute.
 
 Example:
@@ -122,7 +122,7 @@ Example:
 </struct>
 ```
 
-Each `<param>` requires `"name"`, `"type"` and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"` or the one of the `<enum>`, `<struct>` names specified in the Mobile API.
+Each `<param>` requires `"name"`, `"type"` and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"` or one of the `<enum>`, `<struct>` names specified in the Mobile API.
 
 `<param>` could have `"array"` attribute to represent an array of values or objects of the described type. Attributes `"maxsize"` and `"minsize"` provide additional restrictions to an array.
 
@@ -130,7 +130,7 @@ Numeric types can be restricted using `"minvalue"` and `"maxvalue"`.
 
 The `"defvalue"` attribute contains default value with different type, depends on `<param>` type, note: this attribute is not allowed for `<struct>` type.
 
-### `<function>`
+### function
 The `<function>` element represents a specific RPC and message type of the Mobile API. It contains any number of `<param>`. The `<function>` has a required `"name"`, `"messagetype"`, `"functionID"` attributes.
 
 Example:
@@ -179,4 +179,3 @@ Any element, param, function, or struct can use following xml attributes to expr
 - `removed` - A boolean value to describe that an item has been removed from the RPC Spec. Should only be specified if `removed=true`.
 - `deprecated` - A boolean value to describe that an item has been deprecated from the RPC Spec. Should only be specified if `deprecated=true`.
 - `history` - An array of history items that contains all previous RPC Spec definitions for an item. The most recent version is not included in this history array.
-
