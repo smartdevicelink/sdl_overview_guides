@@ -96,7 +96,19 @@ SDL has two different enum types: `string` and `integer`. If `"hexvalue"` or `"v
 
 The `<element>` has a required `"name"` attribute. For `string` enums, the value of `"name"` attribute will be one of the possible values of the particular `<enum>`.  For `integer` enums, the value of `"value"` attribute will be one of the possible values. The `"hexvalue"` is just a hexadecimal representation of the `"value"` attribute and either hexvalue or value can be used.
 
-`<element>` could also have an `"internal_name"` attribute. This attribute is not used in communication with SDL Core, but it describes the `<element>` name for SDL libraries.
+`<element>` could also have an `"internal_name"` attribute. This attribute is not used in communication with SDL Core, but it describes the `<element>` developer facing elemtn value. For example refer to the `HMILevel` enum:
+
+```xml
+    <enum name="HMILevel" since="1.0">
+        <description>Enumeration that describes current levels of HMI.</description>
+        <element name="FULL" internal_name="HMI_FULL" />
+        <element name="LIMITED" internal_name="HMI_LIMITED" />
+        <element name="BACKGROUND" internal_name="HMI_BACKGROUND" />
+        <element name="NONE" internal_name="HMI_NONE" />
+    </enum>
+```
+
+The HMILevel communicated to the proxies from SDL Core will use the `name` value (`FULL`, `NONE`, etc). However the `HMILevel` enum usage in SDL Core's code will use the `internal_name` value (`HMI_FULL`, `HMI_NONE`, etc).
 
 ### `<struct>`
 `<struct>` is a complex data type. `<struct>` contains any number of `<param>`. The `<struct>` has a required `"name"` attribute.
