@@ -1,11 +1,11 @@
 # RPC Spec Generator
 
-The RPC Spec repository contains a parsing script that is used by the following platform's generator implementations:
+The RPC Spec repository contains a parsing script that is used by the following platforms' generator implementations:
 
 - SDL Core
-- SDL IOS
+- SDL iOS
 - SDL Java Suite
-- SDL JavaScript
+- SDL JavaScript Suite
 
 The RPC Spec repository is imported as a git submodule into each of the previously mentioned platforms. The RPC Spec parser reads the MOBILE_API.xml which is the specification for all RPC messages communicated between a proxy platform and SDL Core. Each platform contains a code generator for creating RPC classes and files. These generators greatly reduce the amount of effort for adding new RPC messages.
 
@@ -24,7 +24,7 @@ Using the parser requires a minimum python version, 3.5. The rest of the depende
 python3 -m pip install -r InterfaceParser/requirements.txt
 ```
 
-Each platform has their own generator implementation but the instructions for generating their respective RPC code is the same. Refer to the following command line options for running a SDL platform generator script:
+Each platform has their own generator implementation but the instructions for generating their respective RPC code is the same. Refer to the following command line options for running an SDL platform generator script:
 
 ```
 Mobile API Spec Generator
@@ -96,7 +96,7 @@ SDL has two different enum types: `string` and `integer`. If `"hexvalue"` or `"v
 
 The `<element>` has a required `"name"` attribute. For `string` enums, the value of `"name"` attribute will be one of the possible values of the particular `<enum>`.  For `integer` enums, the value of `"value"` attribute will be one of the possible values. The `"hexvalue"` is just a hexadecimal representation of the `"value"` attribute and either hexvalue or value can be used.
 
-`<element>` could also have an `"internal_name"` attribute. This attribute is not used in communication with SDL Core, but it describes the `<element>` developer facing elemtn value. For example refer to the `HMILevel` enum:
+`<element>` could also have an `"internal_name"` attribute. This attribute is not used in communication with SDL Core, but it describes the `<element>` developer facing element value. For example refer to the `HMILevel` enum:
 
 ```xml
     <enum name="HMILevel" since="1.0">
@@ -134,7 +134,7 @@ Example:
 </struct>
 ```
 
-Each `<param>` requires `"name"`, `"type"` and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"` or one of the `<enum>`, `<struct>` names specified in the Mobile API.
+Each `<param>` requires `"name"`, `"type"`, and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"`, or one of the `<enum>`, `<struct>` names specified in the Mobile API.
 
 `<param>` could have `"array"` attribute to represent an array of values or objects of the described type. Attributes `"maxsize"` and `"minsize"` provide additional restrictions to an array.
 
@@ -143,7 +143,7 @@ Numeric types can be restricted using `"minvalue"` and `"maxvalue"`.
 The `"defvalue"` attribute contains default value with different type, depends on `<param>` type, note: this attribute is not allowed for `<struct>` type.
 
 ### function
-The `<function>` element represents a specific RPC and message type of the Mobile API. It contains any number of `<param>`. The `<function>` has a required `"name"`, `"messagetype"`, `"functionID"` attributes.
+The `<function>` element represents a specific RPC and message type of the Mobile API. It contains any number of `<param>`. The `<function>` has required `"name"`, `"messagetype"`, and `"functionID"` attributes.
 
 Example:
 ```xml
@@ -177,14 +177,14 @@ The `"messagetype"` attribute value should be either `"request"`, `"response"`, 
 
 The `"functionID"` attribute value should match the `"name`" attribute of one `<element>` from the `"FunctionID"` `<enum>`.
 
-Just like `<param>` elements in `<struct>`, each `<param>` has required `"name"`, `"type"`, and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"` or the one of `<enum>`, `<struct>` name exists in XML.
+Just like `<param>` elements in `<struct>`, each `<param>` has required `"name"`, `"type"`, and `"mandatory"` attributes. The `"type"` attribute value should be one of `"Boolean"`, `"Float"`, `"Integer"`, `"String"`, or one of the `<enum>`, `<struct>` name exists in XML.
 
 `<param>` could have `"array"` attribute which means the param represents array of described types. Attributes `"max*"` and `"min*"` provide additional restrictions. 
 
 The `"defvalue"` attribute contains default value with different type, depends on `<param>` type, note: this attribute is not allowed for `<struct>` type.
 
 ### RPC Spec Versioning
-Any element, param, function, or struct can use following xml attributes to express what RPC spec version an item was added, removed, deprecated, or changed.
+Any element, param, function, or struct can use the following xml attributes to express in which RPC spec version an item was added, removed, deprecated, or changed.
 
 - `since` - The first version a change was made to an item (added, deprecated, removed)
 - `until` - Used with the `since` attribute to determine the range of versions a modification applied to an item was relevant.
