@@ -34,6 +34,10 @@ This section describes the lowest level of SDL. It defines how the byte level da
 
 This section describes the higher level JSON-RPC messages that get sent. These messages are higher-level messages sent using the protocol spec's lower level messages (see above). The majority of messages that get sent between the app and head unit are RPC messages. The RPC messages contain information to perform and respond to actions, notify of events, etc. The RPC spec defines much of what SDL can do.
 
+### RPC Spec Generation
+
+This section describes how the SDL platforms use a code generating script to create RPC classes from the RPC Spec.
+
 ### Policies
 
 SmartDeviceLink uses policies to enforce rules about which messages can be sent to and from connected apps. This section will give an overview of that functionality and how to update the policy table, which declares these policies for all known apps.
