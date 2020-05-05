@@ -68,6 +68,9 @@
             "name":"App Services"
         },
         {
+            "name":"RPC Encryption"
+        },
+        {
             "name":"Best Practices",
             "navigation":[  
                 {
