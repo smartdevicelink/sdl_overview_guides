@@ -5,9 +5,9 @@
 
 ## Overview
 
-The RPC encryption feature is designed to protect RPC messages transmitted between a mobile application and SDL. RPCs that need encryption and RPCs that do not need encryption share the same RPC service with encryption enabled.
+The RPC Message Protection feature is designed to encrypt specific RPC messages transmitted between a mobile application and SDL.
 
-## Determining when Encryption is Needed
+## Determining When Encryption Is Needed
 
 ### SDL Application
 
@@ -37,9 +37,7 @@ Each `PermissionItem` struct in the notification also contains a `requireEncrypt
 ```
 Using the app level and RPC level encryption requirements, the app side will be able to determine whether the app needs encryption or not and which RPCs in particular will need encryption.
 
-An RPC message will require encryption/protection if
-- The app has `requireEncryption=true` in the `OnPermissionsChange` notification and
-- The RPC has `requireEncryption=true` in the `PermissionItem`
+An RPC message will require encryption/protection if the app has `requireEncryption=true` in the `OnPermissionsChange` notification, and  the RPC has `requireEncryption=true` in the `PermissionItem`.
 
 ### SDL Core
 
@@ -100,7 +98,7 @@ Multiple functional groups can include the same RPC, each group having an `encry
 If an app has access to multiple functional groups containing the same RPC and **at least one** of the groups requires encryption, then the RPC shall require encryption.
 !!!
 
-## Handling unencrypted messages
+## Handling Unencrypted Messages
 
 SDL Core sends this result code to an SDL app when it receives an un-encrypted RPC request message **that needs encryption**.
 
@@ -113,7 +111,7 @@ SDL Core sends this result code to an SDL app when it receives an un-encrypted R
 </enum>
 ```
 
-## Setting up Encryption
+## Setting Up Encryption
 
 ### SDL Application
 
