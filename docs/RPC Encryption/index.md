@@ -127,11 +127,3 @@ For more information on how to setup encryption on the SDL application side, ple
 ### SDL Core
 
 For more information on how to enable and utilize RPC Encryption within SDL Core, please take a look at the [RPC Encryption Setup Guide](https://smartdevicelink.com/en/guides/core/feature-documentation/rpc-encryption/) section in the core guides.
-
-
-
-
-
-
-
-
