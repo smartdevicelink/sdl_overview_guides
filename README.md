@@ -8,6 +8,6 @@ This is where the documentation for describing most of SDL features will be held
 To update the RPC Spec and Protocol Spec documentation to the latest version, please run the following commands:
 
 ```bash
-cd doc_retriever
+cd sdl_overview_guides/doc_retriever
 python3 DocRetriever.py
 ```
