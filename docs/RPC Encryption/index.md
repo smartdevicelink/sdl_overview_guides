@@ -93,9 +93,15 @@ Whereas the  [`encryption_required`](https://smartdevicelink.com/en/guides/sdl-o
 SDL Core informs an SDL application about the encryption requirement via an `OnPermissionsChange` notification.
 
 !!! NOTE
-Multiple functional groups can include the same RPC, each group having an `encryption_required` flag.
+- Multiple functional groups can include the same RPC, each group having an `encryption_required` flag. If an app has access to multiple functional groups containing the same RPC and **at least one** of the groups requires encryption, then the RPC shall require encryption.
 
-If an app has access to multiple functional groups containing the same RPC and **at least one** of the groups requires encryption, then the RPC shall require encryption.
+- If `encryption_required=true` or `encryption_required` does not exist in the app's section in `app_policies`(i.e. on the app level), the flag in the applicable functional groups shall be checked.
+
+- If `encryption_required=false` in the app's section in `app_policies`(i.e. in the app level), SDL Core and the SDL Application shall not enable RPC encryption, regardless of the value of `encryption_required` in the applicable functional groups.
+
+- If `encryption_required=true` for a functional group, all the RPCs within that function group must be sent/received in an encryption enabled SDL service (The app has been authenticated via TLS handshake and RPC request and response messages are encrypted). 
+
+- If `encryption_required=false` or `encryption_required` does not exist for a functional group, the RPC messages of that functional group shall not be encrypted and can be transmitted in both encryption enabled and disabled SDL services.
 !!!
 
 ## Handling Unencrypted Messages
