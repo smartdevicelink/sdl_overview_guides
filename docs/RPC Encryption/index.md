@@ -104,6 +104,16 @@ SDL Core informs an SDL application about the encryption requirement via an `OnP
 - If `encryption_required=false` or `encryption_required` does not exist for a functional group, the RPC messages of that functional group shall not be encrypted and can be transmitted in both encryption enabled and disabled SDL services.
 !!!
 
+!!! NOTE
+There are certain RPCs that can be sent in a non secure service despite the `encryption_required` flag being set to true
+- RegisterAppInterface
+- SystemRequest
+- OnPermissionsChange
+- OnSystemRequest
+- PutFile
+- OnHMIStatus
+!!!
+
 ## Handling Unencrypted Messages
 
 SDL Core sends this result code to an SDL app when it receives an un-encrypted RPC request message **that needs encryption**.
