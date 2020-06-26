@@ -13,7 +13,7 @@ WiFi transports are supported in two ways with various limitations. First, the p
 
 Secondly, this transport can be used in the development and debugging phase of SDL integration and will act as the primary transport in that situation. For more information please see the evolution proposal [SDL 0141: Supporting simultaneous multiple transports](https://github.com/smartdevicelink/sdl_evolution/blob/master/proposals/0141-multiple-transports.md).
 
-## Can I implement custom HMI templates?<a id="an-i-implement-custom-hmi-templates?"></a>
+## Can I implement custom HMI templates?<a id="can-i-implement-custom-hmi-templates?"></a>
 This is possible, but not recommended as any app that builds itself for the head unit's custom template would not work with any other systems.  If new templates are desired, they should go through the SDL Evolution Process and be adopted by the project.
 
 ## Can I implement custom vehicle data messages?<a id="can-i-implement-custom-vehicle-data-messages?"></a>
