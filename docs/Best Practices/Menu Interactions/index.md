@@ -48,7 +48,7 @@ PerformInteraction lists should always be as small as possible by UX design. How
        - `Skip`button (which is currently only available for Media Apps)
        - Softbuttons & Voice commands
        - Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
-       - Announce the availability of `Skip`hard button on the steering wheel for easy navigation.
+       - Announce the availability of `Skip` hard button on the steering wheel for easy navigation.
 
       *Note:* Only make the announcement the first time the search has been completed to reduce any kind of annoyance to the user.
 
