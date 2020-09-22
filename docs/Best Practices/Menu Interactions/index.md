@@ -46,7 +46,7 @@ PerformInteraction lists should always be as small as possible by UX design. How
        - Define softbuttons for each possible action and add the respective command to voice and menu.
        - To cycle through the result list, you may use one of the below options:
        - `Skip` button (which is currently only available for Media Apps)
-       - Softbuttons & Voice commands
+       - Softbuttons & voice commands
        - Show the current item and the length of the list in the Media-track. For example 1/10 for the first item out of 10 items from the result.
        - Announce the availability of `Skip` hard button on the steering wheel for easy navigation.
 
