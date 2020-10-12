@@ -202,7 +202,7 @@ These fields are used for applications which use a cloud transport and require C
         "steal_focus": false,
         "priority": "NONE",
         "default_hmi": "NONE",
-        "groups": ["Base-4", "RemoteControl"],
+        "groups": ["Base-4", "CloudApp"],
         "RequestType": [],
         "RequestSubType": [],
         "endpoint": "ws://smartdevicelink.com:8888/path/",
