@@ -205,6 +205,7 @@ These fields are used for applications which use a cloud transport and require C
         "groups": ["Base-4", "CloudApp"],
         "RequestType": [],
         "RequestSubType": [],
+        "nicknames": ["Example Application"],
         "endpoint": "ws://smartdevicelink.com:8888/path/",
         "enabled": true,
         "cloud_transport_type": "WS",
