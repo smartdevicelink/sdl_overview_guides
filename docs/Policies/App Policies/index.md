@@ -115,7 +115,7 @@ This flag can be used to override `encryption_required` on the functional group 
 ## Remote Control Fields
 
 !!! note
-These permissions will only take effect if the application registers with the `REMOTE_CONTROL` AppHMIType.
+These permissions will only take effect if the application either registers with the `REMOTE_CONTROL` AppHMIType or has this type explicitly included in its [AppHMIType policy field](#apphmitype).
 !!!
 
 ### Example Entry
@@ -130,6 +130,7 @@ These permissions will only take effect if the application registers with the `R
         "groups": ["Base-4", "RemoteControl"],
         "RequestType": [],
         "RequestSubType": [],
+        "AppHMIType": ["REMOTE_CONTROL"],
         "moduleType": ["RADIO", "CLIMATE"]
     },
     ...
