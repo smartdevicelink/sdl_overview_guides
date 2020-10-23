@@ -45,7 +45,11 @@ This field is mandatory when defining policies for a cloud application, in which
 
 ### AppHMIType
 
-This field defines a list of AppHMITypes which an application is allowed to register with. If omitted, all AppHMITypes will be allowed.
+This field defines a list of AppHMITypes which an application is allowed to register with. If omitted, all AppHMITypes will be allowed (with the exception of `WEB_VIEW`).
+
+!!! note
+This field is mandatory for webengine apps which use the `WEB_VIEW` AppHMIType, in which case the `WEB_VIEW` value must be explicitly included in this list.
+!!!
 
 ### keep_context
 
