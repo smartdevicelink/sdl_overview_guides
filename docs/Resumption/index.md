@@ -15,7 +15,7 @@ Data resumption is used when an application requests to restore data used in the
 For data resumption purposes, SDL Core must store application-related data such as menu commands, application global properties, voice recognition data, and subscriptions for previous ignition cycles after an unexpected disconnect or ignition off. 
 
 !!! note
-On every fourth ignition cycle, SDL Core clears all corresponding application-related data used for resumption. This will either be stored in app_info.dat or in the resumption database depending on SDL Core's ini configuration.
+On every fourth ignition cycle, SDL Core clears all corresponding application-related data used for resumption. This will either be stored in app_info.dat or in a resumption database depending on SDL Core's ini configuration.
 
 smartDeviceLink.ini example
 ```
@@ -41,15 +41,16 @@ If the application resumes data successfully:
   - SubscribeVehicleData
   - SubscribeWayPoints
   - PutFile
-  - GetSystemCapability if previous parameter `subscribe = true`
-  - GetAppServiceData if previous parameter `subscribe = true`
+  - GetInteriorVehicleData (if previously sent with `subscribe = true`)
+  - GetSystemCapability (if previously sent with `subscribe = true`)
+  - GetAppServiceData (if previously sent with `subscribe = true`)
 
 |||
 Successful App Resumption
 ![Successful App Resumption](./assets/OnAppRegisteredResume.png)
 |||
 
-If during resumption, the HMI responds with an error to any of the above requests sent by SDL Core, SDL Core will revert all resumption data by for example sending DeleteCommand to all successfully acknowledged AddCommand requests. An error response from the HMI indicates unsuccessful resumption, and SDL Core will continue to register the app in a fresh state.
+If the HMI responds with an error to any of the resumption requests for an application sent by SDL Core, SDL Core will revert any data that has been resumed for the application thus far (ex. by sending DeleteCommand message for all successful AddCommand requests). Any such error response from the HMI indicates an unsuccessful resumption, and SDL Core will continue to register the app in a fresh state.
 
 If the application does NOT resume data successfully:
 
