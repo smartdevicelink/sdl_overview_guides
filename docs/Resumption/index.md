@@ -59,7 +59,6 @@ If the application does NOT resume data successfully:
  - SDL Core will provide `OnAppRegistered` with `resumeVrGrammars = false` or no resume parameter at all.
  - SDL Core cleans up all previously stored application data for the application that failed to resume. The HMI must also clean up previously compiled `VRGrammars` for the application.
  - The application will send new data to start SDL operations. In this event, SDL Core and the HMI should restart the cycle of collecting application data for resumption.
- - GetSystemCapability subscriptions were still restored, and requests with parameter `subscribe = true` do not need to be resent.
 
 |||
 Unsuccessful App Resumption
