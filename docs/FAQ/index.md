@@ -1,12 +1,12 @@
 # SmartDeviceLink FAQ
 Here are a few of the most common questions new developers have around the SmartDeviceLink project. 
 
-- [Is WiFi a supported transport?](#is-wifi-a-supported-transport?)
-- [Can I implement custom HMI templates?](#can-i-implement-custom-hmi-templates?)
-- [Can I implement custom vehicle data messages?](#can-i-implement-custom-vehicle-data-messages?)
-- [What is the process for obtaining an App ID?](#what-is-the-process-for-obtaining-an-app-id?)
-- [Why does SDL require that I use templates for non-navigation applications?](#why_templates?)
-- [I didn't find the answers I was looking for, where else can I look?](#i-didn't-find-the-answers-i-was-looking-for,-where-else-can-i-look?)
+- [Is WiFi a supported transport?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#is-wifi-a-supported-transport)
+- [Can I implement custom HMI templates?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#can-i-implement-custom-hmi-templates)
+- [Can I implement custom vehicle data messages?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#can-i-implement-custom-vehicle-data-messages)
+- [What is the process for obtaining an App ID?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#what-is-the-process-for-obtaining-an-app-id)
+- [Why does SDL require that I use templates for non-navigation applications?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#why-does-sdl-require-that-i-use-templates-for-non-navigation-applications)
+- [I didn't find the answers I was looking for, where else can I look?](https://smartdevicelink.com/en/guides/sdl-overview-guides/faq/#i-didnt-find-the-answers-i-was-looking-for-where-else-can-i-look)
 
 ## Is WiFi a supported transport?<a id="is-wifi-a-supported-transport?"></a>
 WiFi transports are supported in two ways with various limitations. First, the production version is only available as a secondary transport. This means that a primary transport (such as Bluetooth or USB) has to be connected first in order for the TCP transport to connect.
