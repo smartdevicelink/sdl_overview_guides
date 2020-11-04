@@ -1,6 +1,6 @@
 # Registering an Application
 
-After the app starts the SDL session, it's time to send more information to the SDL Core implementation about the application that is connecting. The library will send a `RegisterAppInterface` RPC request to Core. What information can be sent is found [here](https://github.com/smartdevicelink/rpc_spec#registerappinterface). Core passes most of this information the HMI so that the HMI can present this application on an app list for the user to start.
+After the app starts the SDL session, it's time to send more information to the SDL Core implementation about the application that is connecting. The library will send a `RegisterAppInterface` RPC request to Core. What information can be sent is found [here](https://github.com/smartdevicelink/rpc_spec#registerappinterface). Core passes most of this information to the HMI so that the HMI can present this application on an app list for the user to start.
 
 After Core and the HMI have accepted the app, Core will create a `RegisterAppInterface` response to send back to the app. This will contain a lot of information about the system that the app library will need to know in order to adjust the app's UI and adapt to this specific system. The supplied parameters can be found [in the RPC Spec](https://github.com/smartdevicelink/rpc_spec#registerappinterface-1).
 
