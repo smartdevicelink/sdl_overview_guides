@@ -12,7 +12,7 @@ Designing your application on a mobile device is entirely a visual process. Howe
  There are only a few ways of presenting information to the user. The first way is to write to the available _templates_, for example to your application's main screen. While more advanced displays allow for more updated fields and _templates_, you are always given a _base template_ to write to.
  The second is to send a text string for the voice engine to process and speak back to the user. The combination of the two, display _template_ updates and sending text to be processed into speech, is the best way of presenting information to the user. An example of this is requesting a pop-up with text-to-speech (_TTS_), or `Alert`.
 
-TBD: Attach link for [Available Templates](#available-templates).
+You can find a list of available templates on our [Supported Templates](https://smartdevicelink.com/en/guides/sdl-overview-guides/user-interface/supported-templates/) page.
 
 #### Using Display
 There are anywhere between two and four lines of text available to your application via the `Show` command. As a general rule, use this display to convey the current state of your application.

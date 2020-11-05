@@ -19,7 +19,7 @@ If the implementation of Core supports hash resumption, any time an item that ca
 
 ### OnPermissionChange
 
-After the app has registered, Core will check the policy table to see if the app has any permission updates.  You can find more information about [OnPermissionChange parameters](https://github.com/smartdevicelink/rpc_spec#onpermissionchange) in the RPC spec.
+After the app has registered, Core will check the policy table to see if the app has any permission updates.  You can find more information about [OnPermissionChange parameters](https://github.com/smartdevicelink/rpc_spec#onpermissionschange) in the RPC spec.
 
 ### OnDriverDistraction
 This is a required notification from Core to be sent to the app. It defines information about whether or not the driver is currently in a distracted state (based on factors like the vehicle speed). You can find more information about [OnDriverDistraction parameters](https://github.com/smartdevicelink/rpc_spec#ondriverdistraction) in the RPC spec.

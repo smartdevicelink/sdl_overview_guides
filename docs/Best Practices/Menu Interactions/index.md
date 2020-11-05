@@ -11,10 +11,12 @@ As an application, you will want to respond to user input. To limit changes in m
 #### Handling Choices, ChoiceSets and Commands  
 Applications can load `ChoiceSet` with 100 items. If your `PerformInteraction` requires additional commands, you may reference additional `ChoiceSets`. That is, one `PerformInteraction` can contain more than one `ChoiceSet`. If your list of choices is known ahead of time, it is helpful to create these during your initialization phases, and simply reuse the `ChoiceSet` throughout your application's lifecycle. When a user initiates an interaction, the user may choose from whatever choices are defined at that moment. It is up to the application to ensure that all appropriate choices are defined **_before_** the app interaction. Also, consider grouping your choices in a way that maximizes reusability of the defined `Choices` or `ChoiceSets`.
 
-*Note*:
+!!! note
+
 * It is not recommended to consistently delete and create choice sets. If you must delete a `ChoiceSet`, it is suggested that you wait some time since it was last used. Immediately deleting a `ChoiceSet` after its `PerformInteraction` has returned could lead to undesired application behavior.
 * While `DeleteCommand` and `DeleteInteractionChoiceSet` are supported RPCs, only use them when appropriate. Avoid deleting commands and `ChoiceSets` that will knowingly be used again.
 * Every `choiceID` across different `ChoiceSets` should have unique IDs within the app's lifecycle.
+!!!
 
 
 
