@@ -188,7 +188,7 @@ This field defines the properties of the app services that this application is a
     * If the `handledRPCs` field in the app's `PublishAppService.appServiceManifest` includes a function ID that is not in this list, the message will be rejected. 
     * This field is mandatory, but can be empty.
     * Subfields:
-        * `function_id` - The [function ID](https://github.com/smartdevicelink/rpc_spec/blob/master/MOBILE_API.xml) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
+        * `function_id` - The [function ID](https://github.com/smartdevicelink/rpc_spec#functionid) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
 
 ### allow_unknown_rpc_passthrough
 

@@ -4,7 +4,7 @@ An audiobook app for SDL should include as much of the native apps functionality
 #### Use Voice Commands
 Your Audiobook app should contain such basic functionality as `Play`, `Pause`, and `Resume`. You can use build in controls for these features by calling the `subscribeButton` RPC. This will allow you to not only create buttons on the infotainment system but also be informed when the user presses hard buttons, which might be placed on the steering wheel. It is important to also add voice control capabilities for these functions. To add a voice command use the `AddCommand` RPC but omit the `menuParams` argument. This will create a voice command without creating an item in the menu.   
 
-More information about this RPC can be found on the [AddCommand page](https://smartdevicelink.com/en/docs/hmi/master/ui/addcommand/).
+More information about this RPC can be found on the [UI.AddCommand](https://smartdevicelink.com/en/docs/hmi/master/ui/addcommand/) page.
 
 #### Display Information
 Your app should display information like title, author, and potentially additional items like chapter number. It is encouraged to use the following layout of information on the screen:
@@ -17,11 +17,11 @@ mainField3 | Chapter (x/x)
 
 It is encouraged to show static images of the book cover, however moving or interactive images are not allowed. Neither is the display of the actual text of the book.
 
-##*Add link to DisplayInformation Section*
+More information can be found in the [DisplayInformation](https://smartdevicelink.com/en/guides/sdl-overview-guides/best-practices/display-information/) section.
 
 #### Managing Lists
 
-Use the `performInteraction` RPC to allow users to choose from lists of Books.
+Use the `PerformInteraction` RPC to allow users to choose from lists of Books.
 
 #### Managing Audio
 
