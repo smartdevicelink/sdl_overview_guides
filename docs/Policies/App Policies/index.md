@@ -143,7 +143,7 @@ This field defines a list of Remote Control module types (defined in the `Module
 
 ## App Service Fields
 
-These fields are used if the application is either a provider or consumer of app service data. See our [App Service Provider Guide](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/) for more information on developing an application with these capabilities.
+These fields are used if the application is either a provider or consumer of app service data. See our [App Service Guidelines](https://smartdevicelink.com/en/guides/core/feature-documentation/app-service-guidelines/) for more information on developing an application with these capabilities.
 
 ### Example Entry
 
@@ -184,11 +184,11 @@ This field defines the properties of the app services that this application is a
 * `service_names` - Defines a list of potential service names that an app can publish with this service type. 
     * If the `serviceName` field in the app's `PublishAppService.appServiceManifest` does not match one of the values in this list, the message will be rejected.
     * If omitted, no restrictions will be applied to the `serviceName` parameter.
-* `handled_rpcs` - This field defines a list of permissions for RPCs that an app service could intercept via the [RPC passing](https://smartdevicelink.com/en/guides/core/app-service-provider-guide/#rpc-passing) feature. 
+* `handled_rpcs` - This field defines a list of permissions for RPCs that an app service could intercept via the [RPC passing](https://smartdevicelink.com/en/guides/core/feature-documentation/app-service-guidelines/#rpc-passing) feature. 
     * If the `handledRPCs` field in the app's `PublishAppService.appServiceManifest` includes a function ID that is not in this list, the message will be rejected. 
     * This field is mandatory, but can be empty.
     * Subfields:
-        * `function_id` - The [function ID](https://github.com/smartdevicelink/sdl_core/blob/master/src/components/interfaces/MOBILE_API.xml) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
+        * `function_id` - The [function ID](https://github.com/smartdevicelink/rpc_spec#functionid) of the potential handled RPC. Can be a function ID which was introduced after Core's local RPC spec version.
 
 ### allow_unknown_rpc_passthrough
 
