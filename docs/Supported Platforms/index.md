@@ -26,7 +26,7 @@ The enterprise edition of Java is supported, however, there is no Java EE specif
 
 #### Ubuntu
 
-Core is currently built using Ubuntu 18 so it is the main supported platform.
+Core can currently be built using Ubuntu 16, 18 and 20. Ubuntu 20 is the main supported platform.
 
 #### QNX
 
