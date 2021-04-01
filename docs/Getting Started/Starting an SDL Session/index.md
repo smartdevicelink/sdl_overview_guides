@@ -10,7 +10,7 @@ The Core implementation should respond with a `StartServiceACK` that contains sp
 
 ### When is Streaming Allowed
 
-SDL Core maintains which apps can stream audio or video via the `audioStreamingState` and `videoStreamingState` parameters of `OnHMIStatus`. In order for an app to stream it must be in `STREAMABLE` `videoStreamingState` or `AUDIBLE`/`ATTENUATED` `audioStreamingState`. SDL Core knows whether the app uses video service or not depending on the `AppHMIType`. Currently only `NAVIGATION` and `PROJECTION` apps use video service. Assuming there is at most one app that can do video streaming at any time, the following table shows how SDL Core shall act regarding `videoStreamingState` in different cases:
+SDL Core maintains which apps can stream audio or video via the `audioStreamingState` and `videoStreamingState` parameters of `OnHMIStatus`. For an app to stream it must be in `STREAMABLE` `videoStreamingState` or `AUDIBLE`/`ATTENUATED` `audioStreamingState`. SDL Core knows whether the app can use video services or not depending on the `AppHMIType`. Currently, only `NAVIGATION` and `PROJECTION` apps can use video services. Assuming there is at most one app that can do video streaming at any time, the following table shows how SDL Core shall act regarding `videoStreamingState` in different cases:
 
 | Case | Current video source | SDL app2 comes to FULL | Results | OnHMIStatus videoStreamingState to app1 | OnHMIStatus videoStreamingState to app2 | 
 | -- | --- | --- | --- | --- | --- |
@@ -24,7 +24,12 @@ SDL Core maintains which apps can stream audio or video via the `audioStreamingS
 If an app does not stop video service after receiving `onHMIStatus` with `videoStreamingState`=`NOT_STREAMABLE` for some time, SDL Core shall send a stop service control frame to the app.
 !!!
 
-The bool parameter `isMediaApplication` in the register app interface request indicates if an application supports the `AUDIBLE` streaming state. There are two types of projection applications; if AppHMIType=PROJECTION and isMediaApplication=false, we call it a non-media projection application. If AppHMIType=PROJECTION and isMediaApplication=true or AppHMIType=PROJECTION & MEDIA, we call it a media projection application. We assume that media projection applications stream audio data via either Bluetooth A2DP (for android) or iAP (for iOS) as regular media applications do. We also assume projection applications do not use binary audio service. The following table shows how SDL Core shall act regarding `audioStreamingState` in different cases.
+The bool parameter `isMediaApplication` in the register app interface request indicates if an application supports the `AUDIBLE` streaming state. There are two types of projection applications:
+
+- If `AppHMIType`=`PROJECTION` and `isMediaApplication`=false, we call it a non-media projection application.
+- If `AppHMIType`=`PROJECTION` and `isMediaApplication`=true, or `AppHMIType`=`PROJECTION` & `MEDIA`, we call it a media projection application. 
+
+We assume that media projection applications stream audio data via either Bluetooth A2DP (for android) or iAP (for iOS) as regular media applications do. We also assume projection applications do not use binary audio services. The following table shows how SDL Core acts regarding `audioStreamingState` in different cases.
 
 | Case | Current audio source (appHMIType) | SDL app2 activated or system event | app2 appHMIType | app2 is media | Results | OnHMIStatus audioStreamingState to app1 | OnHMIStatus audioStreamingState to App2 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -43,5 +48,5 @@ The bool parameter `isMediaApplication` in the register app interface request in
  *In the case of co-existence of a NAVIGATION app and a MEDIA or COMMUNICATION app, when the NAVIGATION app does not start audio steaming service, the MEDIA/COMMUNICATION app is `AUDIBLE`; When the NAVIGATION app starts audio streaming service, the MEDIA/COMMUNICATION app is either `ATTENUATED` if the system supports mixing or `NOT_AUDIBLE` if the system does not support mixing.
 
 !!! NOTE
-The transition of `videoStreamingState` and `audioStreamingState` is independent of the transition of `hmiLevel`. However, the transition of `hmiLevel` depends on both `audioStreamingState` and `videoStreamingState`. SDL Core shall move a `LIMITED` level media/projection/navigation app which is `NOT_AUDIBLE` and `NOT_STREAMABLE` to `BACKGROUND` HMI level. There are at most two media/projection/navigation apps which can be placed in HMI level `LIMITED`. In `LIMITED` level, an app can be either `AUDIBLE` (including `ATTENTUATED`) or `STREAMABLE` or both.
+The transition of `videoStreamingState` and `audioStreamingState` is independent of the transition of `hmiLevel`. However, the transition of `hmiLevel` depends on both `audioStreamingState` and `videoStreamingState`. SDL Core moves a `LIMITED` level media/projection/navigation app which is `NOT_AUDIBLE` and `NOT_STREAMABLE` to `BACKGROUND` HMI level. There are at most two media/projection/navigation apps which can be placed in HMI level `LIMITED`. At HMI level `LIMITED`, an app can be either `AUDIBLE` (including `ATTENTUATED`) or `STREAMABLE` or both.
 !!!
