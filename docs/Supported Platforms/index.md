@@ -26,7 +26,7 @@ The enterprise edition of Java is supported, however, there is no Java EE specif
 
 #### Ubuntu
 
-Core currently officially supports Ubuntu versions 16.04, 18.04 and 20.04. Ubuntu 20.04 is the main supported platform of the project.
+Core currently officially supports Ubuntu versions 18.04 and 20.04. Ubuntu 20.04 is the main supported platform of the project.
 
 #### QNX
 
