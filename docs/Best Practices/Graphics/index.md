@@ -6,7 +6,7 @@ Please ensure to use the correct dimensions for your images.
 
 Graphics used in `choiceSets` must be uploaded before the `choiceSet` is used. This will decrease performance if many different graphics are to be used in one `choiceSet`. To mitigate that the usage of generic icons is encouraged (like a CD icon instead of the actual Album art).
 
-##*Add Links to uploading graphics (android/ iOS) sections*
+More information on using images with SDL is available in the Uploading Images guide available for either [iOS](https://smartdevicelink.com/en/guides/iOS/other-sdl-features/uploading-images/) or [Android](https://smartdevicelink.com/en/guides/android/other-sdl-features/uploading-images/).
 
 ## Driver Distraction Rules for Graphics
 

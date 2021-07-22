@@ -1,12 +1,12 @@
 # Registering an Application
 
-After the app starts the SDL session, it's time to send more information to the SDL Core implementation about the application that is connecting. The library will send a `RegisterAppInterface` RPC request to Core. What information can be sent is found [here](https://github.com/smartdevicelink/rpc_spec#registerappinterface). Core passes most of this information the HMI so that the HMI can present this application on an app list for the user to start.
+After the app starts the SDL session, it's time to send more information to the SDL Core implementation about the application that is connecting. The library will send a `RegisterAppInterface` RPC request to Core. What information can be sent is found [here](https://github.com/smartdevicelink/rpc_spec#registerappinterface). Core passes most of this information to the HMI so that the HMI can present this application on an app list for the user to start.
 
 After Core and the HMI have accepted the app, Core will create a `RegisterAppInterface` response to send back to the app. This will contain a lot of information about the system that the app library will need to know in order to adjust the app's UI and adapt to this specific system. The supplied parameters can be found [in the RPC Spec](https://github.com/smartdevicelink/rpc_spec#registerappinterface-1).
 
 ![Step 3: Registering an app](assets/overall_3.png) 
 
-Once the app is registered, Core usually sends a few more notifications to the app. These include an `OnHMIStatus`, `OnPermissionChange`, `OnHashChange`, and `OnDriverDistraction`. 
+Once the app is registered, Core usually sends a few more notifications to the app. These include an `OnHMIStatus`, `OnPermissionsChange`, `OnHashChange`, and `OnDriverDistraction`.
 
 ## Post-Registration Notifications
 ### OnHMIStatus
@@ -17,9 +17,9 @@ This is a required notification from Core to be sent to the app. This sets the b
 
 If the implementation of Core supports hash resumption, any time an item that can be restored with the correct hash changes this notification will be sent. Since the app just registered with information that updated the app record on Core, this notification is sent to the app. You can find more information about [OnHashChange parameters](https://github.com/smartdevicelink/rpc_spec#onhashchange) in the RPC spec.
 
-### OnPermissionChange
+### OnPermissionsChange
 
-After the app has registered, Core will check the policy table to see if the app has any permission updates.  You can find more information about [OnPermissionChange parameters](https://github.com/smartdevicelink/rpc_spec#onpermissionchange) in the RPC spec.
+After the app has registered, Core will check the policy table to see if the app has any permission updates.  You can find more information about [OnPermissionsChange parameters](https://github.com/smartdevicelink/rpc_spec#onpermissionschange) in the RPC spec.
 
 ### OnDriverDistraction
 This is a required notification from Core to be sent to the app. It defines information about whether or not the driver is currently in a distracted state (based on factors like the vehicle speed). You can find more information about [OnDriverDistraction parameters](https://github.com/smartdevicelink/rpc_spec#ondriverdistraction) in the RPC spec.

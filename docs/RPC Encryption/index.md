@@ -106,6 +106,7 @@ SDL Core informs an SDL application about the encryption requirement via an `OnP
 
 !!! NOTE
 There are certain RPCs that can be sent in a non secure service despite the `encryption_required` flag being set to true
+
 - RegisterAppInterface
 - SystemRequest
 - OnPermissionsChange
