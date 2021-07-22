@@ -68,7 +68,15 @@
             "name":"App Services"
         },
         {
-            "name":"RPC Encryption"
+            "name":"Security",
+            "navigation":[
+                {
+                    "name":"Protected Services"
+                },
+                {
+                    "name":"RPC Encryption"
+                }
+            ]
         },
         {
             "name":"Best Practices",

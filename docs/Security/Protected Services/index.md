@@ -7,6 +7,11 @@
 
 Secured services in SDL are established using a TLS handshake, the TLS handshake process is defined by TLS and is not part of the SDL protocol.
 
+|||
+TLS Handshake Process
+![TLS Handshake activity diagram](https://user-images.githubusercontent.com/5848997/122258220-cb8b7100-ce9e-11eb-9b2a-a6194b0d1b68.png)
+|||
+
 ## 2. Peer roles during the handshake
 
 The handshake for establishing secured services uses a client-server model which is configurable via SDL Core settings. An application must take the role of the server while SDL Core is the client. The client entity will initiate a TLS handshake with the corresponding security manager of the server. The client will do this only if the server was not previously authenticated in the current transport connection.
@@ -27,6 +32,5 @@ After [RPC service encryption](https://github.com/smartdevicelink/sdl_overview_g
 - SDL Core sends an unencrypted notification if the RPC does not need protection.  
 
 - SDL Core sends an encrypted notification if the RPC needs protection.
-
 
 !!!
