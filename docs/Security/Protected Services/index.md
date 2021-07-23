@@ -9,7 +9,7 @@ Secured services in SDL are established using a TLS handshake, the TLS handshake
 
 |||
 TLS Handshake Process
-![TLS Handshake activity diagram](https://user-images.githubusercontent.com/5848997/122258220-cb8b7100-ce9e-11eb-9b2a-a6194b0d1b68.png)
+![TLS Handshake activity diagram](./assets/tls_handshake_process.png)
 |||
 
 ## 2. Peer roles during the handshake
