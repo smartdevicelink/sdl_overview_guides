@@ -21,7 +21,7 @@ The handshake for establishing secured services uses a client-server model which
 According to the TLS handshake process, the peer certificate can be omitted for the server but is required for the client. Certificate peer verification can be enabled/disabled in SDL Core by changing the `VerifyPeer` parameter in the configuration file. The SDL app libraries do not require a certificate from Core for the TLS handshake, but Core does perform its own internal certificate validation before starting the handshake. During internal validation, Core checks if the certificate is missing (or outdated/invalid) and if so, it initiates a PTU to obtain a new certificate from the Policy Server. If a valid certificate can't be obtained, Core does not start the TLS handshake and it notifies the app library that starting the protected service has failed.
 
 ## 3. RPC processing
-After [RPC service encryption](../rpc-encryption) is enabled, SDL Core will reject any unencrypted RPC requests with an unencrypted response and result code `ENCRYPTION_NEEDED` if the RPC needs protection.
+After [RPC service encryption](../RPC%20Encryption/index.md) is enabled, SDL Core will reject any unencrypted RPC requests with an unencrypted response and result code `ENCRYPTION_NEEDED` if the RPC needs protection.
 
 !!! NOTE
 
