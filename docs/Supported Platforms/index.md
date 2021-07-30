@@ -22,11 +22,11 @@ The standard version of Java is supported to be used mostly embedded or local on
 The enterprise edition of Java is supported, however, there is no Java EE specific code in the library itself. This is due to the fact that Java EE has conflicts with our licensing model for the open source library. This library is designed to be ran from a backend leveraging Java Beans and other web specific Java features.
 
 
-### JavaScript
+#### JavaScript
 The vanilla JavaScript Library allows you to create applications that run in the browser. WebEngine applications, which are installed via an app store and are run by supported HMIs, also fall into this category.
 
 
-### Node.js
+#### Node.js
 The Node.js Library allows you to create applications that run on a web server. These applications can also take advantage of npm packages.
 
 
