@@ -55,4 +55,4 @@ HTML is the most widely supported platform for developing the HMI. There are sev
 
 #### QT
 
-Some partners have created HMI implementations using QT. This platform is useable, but is a bit less dynamic and more difficult to update than HTML.
+Some partners have created HMI implementations using QT. This platform is usable, but is a bit less dynamic and more difficult to update than HTML.
