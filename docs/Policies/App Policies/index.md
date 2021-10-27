@@ -45,7 +45,7 @@ This field is mandatory when defining policies for a cloud application, in which
 
 ### AppHMIType
 
-This field defines a list of AppHMITypes which an application is allowed to register with. If omitted, all AppHMITypes will be allowed (with the exception of `WEB_VIEW`).
+This field defines a list of AppHMITypes which an application is allowed to be registered with. If provided, this list of AppHMITypes will be used for this application in place of the `appHMIType` list provided in the app's RegisterAppInterface request. If there are AppHMITypes present in the app's RegisterAppInterface request that are not present in this list, SDL Core will provide a warning of this discrepancy to the app in the RegisterAppInterface response.
 
 !!! note
 This field is mandatory for webengine apps which use the `WEB_VIEW` AppHMIType, in which case the `WEB_VIEW` value must be explicitly included in this list.
